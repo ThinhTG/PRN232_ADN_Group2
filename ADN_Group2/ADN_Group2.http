@@ -1,0 +1,6 @@
+@ADN_Group2_HostAddress = http://localhost:5046
+
+GET {{ADN_Group2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
