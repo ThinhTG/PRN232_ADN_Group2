@@ -12,7 +12,7 @@ namespace ADN_Group2
 {
 	public class Program
 	{
-		public static void Main(string[] args)
+		public static async Task Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
 
@@ -67,6 +67,20 @@ namespace ADN_Group2
 
 			app.UseAuthentication(); // Phải đặt trước UseAuthorization
 			app.UseAuthorization();
+
+			// Seed roles khi khởi động ứng dụng
+			using (var scope = app.Services.CreateScope())
+			{
+				var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
+				string[] roles = new[] { "Guest", "Customer", "Staff", "Manager", "Admin" };
+				foreach (var role in roles)
+				{
+					if (!await roleManager.RoleExistsAsync(role))
+					{
+						await roleManager.CreateAsync(new ApplicationRole { Name = role });
+					}
+				}
+			}
 
 			app.MapControllers();
 

@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|d:\\ky8\\prn232\\adn-project\\prn232_adn_group2\\adn_group2\\controllers\\kitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\controllers\\kitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|d:\\ky8\\prn232\\adn-project\\prn232_adn_group2\\service\\interface\\itestpersonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\interface\\itestpersonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|d:\\ky8\\prn232\\adn-project\\prn232_adn_group2\\service\\interface\\isamplekitservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\interface\\isamplekitservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Interface\\IKitService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Service\\Interface\\IKitService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|d:\\ky8\\prn232\\adn-project\\prn232_adn_group2\\repository\\repository\\addressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\addressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|d:\\ky8\\prn232\\adn-project\\prn232_adn_group2\\service\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 11,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -75,86 +50,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ITestPersonService.cs",
-              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Interface\\ITestPersonService.cs",
-              "RelativeDocumentMoniker": "Service\\Interface\\ITestPersonService.cs",
-              "ToolTip": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Interface\\ITestPersonService.cs",
-              "RelativeToolTip": "Service\\Interface\\ITestPersonService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:10:12.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ISampleKitService.cs",
-              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Interface\\ISampleKitService.cs",
-              "RelativeDocumentMoniker": "Service\\Interface\\ISampleKitService.cs",
-              "ToolTip": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Interface\\ISampleKitService.cs",
-              "RelativeToolTip": "Service\\Interface\\ISampleKitService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:10:09.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IKitService.cs",
-              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Interface\\IKitService.cs",
-              "RelativeDocumentMoniker": "Service\\Interface\\IKitService.cs",
-              "ToolTip": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Interface\\IKitService.cs",
-              "RelativeToolTip": "Service\\Interface\\IKitService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:09:38.397Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "KitController.cs",
-              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\KitController.cs",
-              "RelativeDocumentMoniker": "ADN_Group2\\Controllers\\KitController.cs",
-              "ToolTip": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\KitController.cs",
-              "RelativeToolTip": "ADN_Group2\\Controllers\\KitController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAzwAwAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:03:29.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AddressRepository.cs",
-              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Repository\\Repository\\AddressRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repository\\AddressRepository.cs",
-              "ToolTip": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Repository\\Repository\\AddressRepository.cs",
-              "RelativeToolTip": "Repository\\Repository\\AddressRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T09:02:24.003Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AddressService.cs",
-              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\AddressService.cs",
-              "RelativeDocumentMoniker": "Service\\AddressService.cs",
-              "ToolTip": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\AddressService.cs",
-              "RelativeToolTip": "Service\\AddressService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T08:59:02.163Z"
             }
           ]
         },
