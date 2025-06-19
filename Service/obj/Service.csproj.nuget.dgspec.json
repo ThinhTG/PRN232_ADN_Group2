@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ky8\\PRN232\\ADN_Group2\\Service\\Service.csproj": {}
+    "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Service.csproj": {}
   },
   "projects": {
-    "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Core.csproj": {
+    "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Core.csproj",
+        "projectPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\thinh\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\obj\\",
+        "outputPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,14 +67,14 @@
         }
       }
     },
-    "D:\\Ky8\\PRN232\\ADN_Group2\\Repository\\Repository.csproj": {
+    "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky8\\PRN232\\ADN_Group2\\Repository\\Repository.csproj",
+        "projectUniqueName": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "D:\\Ky8\\PRN232\\ADN_Group2\\Repository\\Repository.csproj",
+        "projectPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\thinh\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky8\\PRN232\\ADN_Group2\\Repository\\obj\\",
+        "outputPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -94,8 +94,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Core.csproj": {
-                "projectPath": "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Core.csproj"
+              "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Core\\Core.csproj": {
+                "projectPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Core\\Core.csproj"
               }
             }
           }
@@ -115,19 +115,29 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.5, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.5, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[9.0.5, )"
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -136,6 +146,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[9.0.5, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[8.0.8, )"
             }
           },
           "imports": [
@@ -158,14 +172,14 @@
         }
       }
     },
-    "D:\\Ky8\\PRN232\\ADN_Group2\\Service\\Service.csproj": {
+    "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky8\\PRN232\\ADN_Group2\\Service\\Service.csproj",
+        "projectUniqueName": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "D:\\Ky8\\PRN232\\ADN_Group2\\Service\\Service.csproj",
+        "projectPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\thinh\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky8\\PRN232\\ADN_Group2\\Service\\obj\\",
+        "outputPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -185,8 +199,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Ky8\\PRN232\\ADN_Group2\\Repository\\Repository.csproj": {
-                "projectPath": "D:\\Ky8\\PRN232\\ADN_Group2\\Repository\\Repository.csproj"
+              "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Repository\\Repository.csproj": {
+                "projectPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Repository\\Repository.csproj"
               }
             }
           }

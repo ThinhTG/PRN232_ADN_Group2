@@ -1,24 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Ky8\\PRN232\\ADN_Group2\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|d:\\ky8\\prn232\\adn_group2\\adn_group2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79DEFC09-7D33-4379-BC71-0932AFD4390D}|Core\\Core.csproj|d:\\ky8\\prn232\\adn_group2\\core\\utils\\timehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79DEFC09-7D33-4379-BC71-0932AFD4390D}|Core\\Core.csproj|solutionrelative:core\\utils\\timehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79DEFC09-7D33-4379-BC71-0932AFD4390D}|Core\\Core.csproj|d:\\ky8\\prn232\\adn_group2\\core\\utils\\corehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79DEFC09-7D33-4379-BC71-0932AFD4390D}|Core\\Core.csproj|solutionrelative:core\\utils\\corehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79DEFC09-7D33-4379-BC71-0932AFD4390D}|Core\\Core.csproj|d:\\ky8\\prn232\\adn_group2\\core\\base\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79DEFC09-7D33-4379-BC71-0932AFD4390D}|Core\\Core.csproj|solutionrelative:core\\base\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,15 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 11,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -62,14 +41,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
@@ -79,62 +50,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TimeHelper.cs",
-              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Utils\\TimeHelper.cs",
-              "RelativeDocumentMoniker": "Core\\Utils\\TimeHelper.cs",
-              "ToolTip": "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Utils\\TimeHelper.cs",
-              "RelativeToolTip": "Core\\Utils\\TimeHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T08:42:31.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CoreHelper.cs",
-              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Utils\\CoreHelper.cs",
-              "RelativeDocumentMoniker": "Core\\Utils\\CoreHelper.cs",
-              "ToolTip": "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Utils\\CoreHelper.cs",
-              "RelativeToolTip": "Core\\Utils\\CoreHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T08:42:05.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BaseEntity.cs",
-              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Base\\BaseEntity.cs",
-              "RelativeDocumentMoniker": "Core\\Base\\BaseEntity.cs",
-              "ToolTip": "D:\\Ky8\\PRN232\\ADN_Group2\\Core\\Base\\BaseEntity.cs",
-              "RelativeToolTip": "Core\\Base\\BaseEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T08:40:46.11Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN_Group2\\ADN_Group2\\appsettings.json",
-              "RelativeDocumentMoniker": "ADN_Group2\\appsettings.json",
-              "ToolTip": "D:\\Ky8\\PRN232\\ADN_Group2\\ADN_Group2\\appsettings.json",
-              "RelativeToolTip": "ADN_Group2\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-22T08:36:54.787Z",
-              "EditorCaption": ""
             }
           ]
         },
