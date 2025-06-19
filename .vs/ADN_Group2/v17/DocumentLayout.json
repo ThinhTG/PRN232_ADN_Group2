@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|d:\\ky8\\prn232\\adn-project\\prn232_adn_group2\\adn_group2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 11,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,6 +55,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\ADN_Group2\\Program.cs",
+              "RelativeDocumentMoniker": "ADN_Group2\\Program.cs",
+              "ToolTip": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\ADN_Group2\\Program.cs",
+              "RelativeToolTip": "ADN_Group2\\Program.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T09:28:54.943Z",
+              "EditorCaption": ""
             }
           ]
         },

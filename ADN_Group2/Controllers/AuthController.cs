@@ -17,7 +17,7 @@ namespace ADN_Group2.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
-            var (success, error) = await _authService.RegisterAsync(request.Email, request.Password, request.FullName);
+            var (success, error) = await _authService.RegisterAsync(request.Email, request.Password, request.FullName, request.Role);
             if (!success)
                 return BadRequest(new { error });
             return Ok(new { message = "Register successful" });
@@ -38,6 +38,7 @@ namespace ADN_Group2.Controllers
         public string Email { get; set; }
         public string Password { get; set; }
         public string FullName { get; set; }
+        public string Role { get; set; }
     }
 
     public class LoginRequest

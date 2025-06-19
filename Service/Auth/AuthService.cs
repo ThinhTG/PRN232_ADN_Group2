@@ -6,6 +6,7 @@ using Repository.Repository;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,11 +33,11 @@ namespace Service.Auth
             if (!await _userRepository.CheckPasswordAsync(user, password))
                 return (false, null, "Invalid password");
 
-            var token = GenerateJwtToken(user);
+            var token = await GenerateJwtToken(user);
             return (true, token, null);
         }
 
-        public async Task<(bool Success, string Error)> RegisterAsync(string email, string password, string fullName)
+        public async Task<(bool Success, string Error)> RegisterAsync(string email, string password, string fullName, string role)
         {
             var user = new ApplicationUser
             {
@@ -46,11 +47,14 @@ namespace Service.Auth
             };
             var result = await _userRepository.CreateUserAsync(user, password);
             if (!result.Succeeded)
-                return (false, string.Join(", ", result.Errors));
+                return (false, string.Join(", ", result.Errors.Select(e => e.Description)));
+
+            await _userRepository.AddToRoleAsync(user, role);
+
             return (true, null);
         }
 
-        private string GenerateJwtToken(ApplicationUser user)
+        private async Task<string> GenerateJwtToken(ApplicationUser user)
         {
             var claims = new List<Claim>
             {
@@ -58,6 +62,9 @@ namespace Service.Auth
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 new Claim("FullName", user.FullName ?? "")
             };
+
+            var roles = await _userRepository.GetRolesAsync(user);
+            claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
