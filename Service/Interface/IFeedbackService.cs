@@ -1,4 +1,5 @@
-using Repository.Entity;
+using Service.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,10 +7,10 @@ namespace Service.Interface
 {
     public interface IFeedbackService
     {
-        Task<IEnumerable<Feedback>> GetAllAsync();
-        Task<Feedback> GetByIdAsync(object id);
-        Task<Feedback> AddAsync(Feedback entity);
-        Task<Feedback> UpdateAsync(Feedback entity);
-        Task<bool> DeleteAsync(object id);
+        Task<IEnumerable<FeedbackReadDTO>> GetAllAsync();
+        Task<FeedbackReadDTO> GetByIdAsync(Guid id);
+        Task<FeedbackReadDTO> AddAsync(FeedbackCreateUpdateDTO entity);
+        Task<bool> UpdateAsync(Guid id, FeedbackCreateUpdateDTO entity);
+        Task<bool> DeleteAsync(Guid id);
     }
 } 

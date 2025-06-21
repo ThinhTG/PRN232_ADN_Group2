@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ADN_Group2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6475246e848c3f98ee26360bcbf5a24945e9e9dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9802481eb20a93314d25d55870f9a3fc09a91ebd")]
 [assembly: System.Reflection.AssemblyProductAttribute("ADN_Group2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ADN_Group2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

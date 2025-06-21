@@ -1,4 +1,4 @@
-using Repository.Entity;
+using Service.DTOs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,10 +6,10 @@ namespace Service.Interface
 {
     public interface IBlogService
     {
-        Task<IEnumerable<Blog>> GetAllAsync();
-        Task<Blog> GetByIdAsync(object id);
-        Task<Blog> AddAsync(Blog entity);
-        Task<Blog> UpdateAsync(Blog entity);
-        Task<bool> DeleteAsync(object id);
+        Task<IEnumerable<BlogReadDTO>> GetAllAsync();
+        Task<BlogReadDTO> GetByIdAsync(int id);
+        Task<BlogReadDTO> AddAsync(BlogCreateUpdateDTO entity);
+        Task<bool> UpdateAsync(int id, BlogCreateUpdateDTO entity);
+        Task<bool> DeleteAsync(int id);
     }
 } 

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Repository.Entity;
+using Service.DTOs;
 using Service.Interface;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -17,33 +18,37 @@ namespace ADN_Group2.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Kit>> GetAll() => await _service.GetAllAsync();
+        public async Task<ActionResult<IEnumerable<KitReadDTO>>> GetAll()
+        {
+            var kits = await _service.GetAllAsync();
+            return Ok(kits);
+        }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Kit>> GetById(System.Guid id)
+        public async Task<ActionResult<KitReadDTO>> GetById(Guid id)
         {
             var entity = await _service.GetByIdAsync(id);
             if (entity == null) return NotFound();
-            return entity;
+            return Ok(entity);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Kit>> Create(Kit entity)
+        public async Task<ActionResult<KitReadDTO>> Create(KitCreateUpdateDTO dto)
         {
-            var created = await _service.AddAsync(entity);
+            var created = await _service.AddAsync(dto);
             return CreatedAtAction(nameof(GetById), new { id = created.KitId }, created);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(System.Guid id, Kit entity)
+        public async Task<IActionResult> Update(Guid id, KitCreateUpdateDTO dto)
         {
-            if (id != entity.KitId) return BadRequest();
-            await _service.UpdateAsync(entity);
+            var updated = await _service.UpdateAsync(id, dto);
+            if (!updated) return NotFound();
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(System.Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             var deleted = await _service.DeleteAsync(id);
             if (!deleted) return NotFound();
