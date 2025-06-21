@@ -1,4 +1,5 @@
-using Repository.Entity;
+using Service.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,10 +7,10 @@ namespace Service.Interface
 {
     public interface IAppointmentService
     {
-        Task<IEnumerable<Appointment>> GetAllAsync();
-        Task<Appointment> GetByIdAsync(object id);
-        Task<Appointment> AddAsync(Appointment entity);
-        Task<Appointment> UpdateAsync(Appointment entity);
-        Task<bool> DeleteAsync(object id);
+        Task<IEnumerable<AppointmentReadDTO>> GetAllAsync();
+        Task<AppointmentReadDTO> GetByIdAsync(Guid id);
+        Task<AppointmentReadDTO> AddAsync(AppointmentCreateUpdateDTO entity);
+        Task<bool> UpdateAsync(Guid id, AppointmentCreateUpdateDTO entity);
+        Task<bool> DeleteAsync(Guid id);
     }
 } 

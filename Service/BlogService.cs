@@ -1,7 +1,10 @@
 using Repository.Entity;
 using Repository.Repository;
+using Service.DTOs;
 using Service.Interface;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Service
@@ -14,21 +17,73 @@ namespace Service
             _repo = repo;
         }
 
-        public async Task<IEnumerable<Blog>> GetAllAsync() => await _repo.GetAllAsync();
-        public async Task<Blog> GetByIdAsync(object id) => await _repo.GetByIdAsync(id);
-        public async Task<Blog> AddAsync(Blog entity)
+        public async Task<IEnumerable<BlogReadDTO>> GetAllAsync()
         {
-            await _repo.AddAsync(entity);
-            await _repo.SaveAsync();
-            return entity;
+            var blogs = await _repo.GetAllAsync();
+            return blogs.Select(b => new BlogReadDTO
+            {
+                BlogId = b.BlogId,
+                Title = b.Title,
+                Content = b.Content,
+                UserId = b.UserId,
+                PublishedDate = b.PublishedDate
+            });
         }
-        public async Task<Blog> UpdateAsync(Blog entity)
+
+        public async Task<BlogReadDTO> GetByIdAsync(int id)
         {
-            _repo.Update(entity);
-            await _repo.SaveAsync();
-            return entity;
+            var blog = await _repo.GetByIdAsync(id);
+            if (blog == null) return null;
+
+            return new BlogReadDTO
+            {
+                BlogId = blog.BlogId,
+                Title = blog.Title,
+                Content = blog.Content,
+                UserId = blog.UserId,
+                PublishedDate = blog.PublishedDate
+            };
         }
-        public async Task<bool> DeleteAsync(object id)
+
+        public async Task<BlogReadDTO> AddAsync(BlogCreateUpdateDTO dto)
+        {
+            var blog = new Blog
+            {
+                Title = dto.Title,
+                Content = dto.Content,
+                UserId = dto.UserId,
+                PublishedDate = DateTime.UtcNow
+            };
+
+            await _repo.AddAsync(blog);
+            await _repo.SaveAsync();
+
+            return new BlogReadDTO
+            {
+                BlogId = blog.BlogId,
+                Title = blog.Title,
+                Content = blog.Content,
+                UserId = blog.UserId,
+                PublishedDate = blog.PublishedDate
+            };
+        }
+
+        public async Task<bool> UpdateAsync(int id, BlogCreateUpdateDTO dto)
+        {
+            var blog = await _repo.GetByIdAsync(id);
+            if (blog == null) return false;
+
+            blog.Title = dto.Title;
+            blog.Content = dto.Content;
+            // UserId maybe shouldn't be updated, but for now we will allow it.
+            blog.UserId = dto.UserId;
+
+            _repo.Update(blog);
+            await _repo.SaveAsync();
+            return true;
+        }
+
+        public async Task<bool> DeleteAsync(int id)
         {
             var entity = await _repo.GetByIdAsync(id);
             if (entity == null) return false;

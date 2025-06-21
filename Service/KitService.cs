@@ -1,7 +1,10 @@
 using Repository.Entity;
 using Repository.Repository;
+using Service.DTOs;
 using Service.Interface;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Service
@@ -14,21 +17,67 @@ namespace Service
             _repo = repo;
         }
 
-        public async Task<IEnumerable<Kit>> GetAllAsync() => await _repo.GetAllAsync();
-        public async Task<Kit> GetByIdAsync(object id) => await _repo.GetByIdAsync(id);
-        public async Task<Kit> AddAsync(Kit entity)
+        public async Task<IEnumerable<KitReadDTO>> GetAllAsync()
         {
-            await _repo.AddAsync(entity);
-            await _repo.SaveAsync();
-            return entity;
+            var kits = await _repo.GetAllAsync();
+            return kits.Select(k => new KitReadDTO
+            {
+                KitId = k.KitId,
+                AppointmentId = k.AppointmentId,
+                SentDate = k.SentDate,
+                TrackingNumber = k.TrackingNumber
+            });
         }
-        public async Task<Kit> UpdateAsync(Kit entity)
+
+        public async Task<KitReadDTO> GetByIdAsync(Guid id)
         {
-            _repo.Update(entity);
-            await _repo.SaveAsync();
-            return entity;
+            var k = await _repo.GetByIdAsync(id);
+            if (k == null) return null;
+            return new KitReadDTO
+            {
+                KitId = k.KitId,
+                AppointmentId = k.AppointmentId,
+                SentDate = k.SentDate,
+                TrackingNumber = k.TrackingNumber
+            };
         }
-        public async Task<bool> DeleteAsync(object id)
+
+        public async Task<KitReadDTO> AddAsync(KitCreateUpdateDTO dto)
+        {
+            var kit = new Kit
+            {
+                KitId = Guid.NewGuid(),
+                AppointmentId = dto.AppointmentId,
+                TrackingNumber = dto.TrackingNumber,
+                SentDate = DateTime.UtcNow
+            };
+
+            await _repo.AddAsync(kit);
+            await _repo.SaveAsync();
+
+            return new KitReadDTO
+            {
+                KitId = kit.KitId,
+                AppointmentId = kit.AppointmentId,
+                SentDate = kit.SentDate,
+                TrackingNumber = kit.TrackingNumber
+            };
+        }
+
+        public async Task<bool> UpdateAsync(Guid id, KitCreateUpdateDTO dto)
+        {
+            var kit = await _repo.GetByIdAsync(id);
+            if (kit == null) return false;
+
+            kit.AppointmentId = dto.AppointmentId;
+            kit.TrackingNumber = dto.TrackingNumber;
+
+            _repo.Update(kit);
+            await _repo.SaveAsync();
+            return true;
+        }
+
+        public async Task<bool> DeleteAsync(Guid id)
         {
             var entity = await _repo.GetByIdAsync(id);
             if (entity == null) return false;

@@ -1,7 +1,10 @@
 using Repository.Entity;
 using Repository.Repository;
+using Service.DTOs;
 using Service.Interface;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Service
@@ -14,24 +17,78 @@ namespace Service
             _repo = repo;
         }
 
-        public async Task<IEnumerable<Address>> GetAllAsync() => await _repo.GetAllAsync();
-        public async Task<Address> GetByIdAsync(object id) => await _repo.GetByIdAsync(id);
-        public async Task<Address> AddAsync(Address entity)
+        public async Task<IEnumerable<AddressReadDTO>> GetAllAsync()
         {
-            await _repo.AddAsync(entity);
-            await _repo.SaveAsync();
-            return entity;
+            var addresses = await _repo.GetAllAsync();
+            return addresses.Select(a => new AddressReadDTO
+            {
+                AddressId = a.AddressId,
+                Number = a.Number,
+                District = a.District,
+                Province = a.Province,
+                UserId = a.UserId
+            });
         }
-        public async Task<Address> UpdateAsync(Address entity)
+
+        public async Task<AddressReadDTO> GetByIdAsync(Guid id)
         {
-            _repo.Update(entity);
-            await _repo.SaveAsync();
-            return entity;
+            var address = await _repo.GetByIdAsync(id);
+            if (address == null) return null;
+
+            return new AddressReadDTO
+            {
+                AddressId = address.AddressId,
+                Number = address.Number,
+                District = address.District,
+                Province = address.Province,
+                UserId = address.UserId
+            };
         }
-        public async Task<bool> DeleteAsync(object id)
+
+        public async Task<AddressReadDTO> AddAsync(AddressCreateUpdateDTO dto)
+        {
+            var address = new Address
+            {
+                AddressId = Guid.NewGuid(),
+                Number = dto.Number,
+                District = dto.District,
+                Province = dto.Province,
+                UserId = dto.UserId
+            };
+
+            await _repo.AddAsync(address);
+            await _repo.SaveAsync();
+
+            return new AddressReadDTO
+            {
+                AddressId = address.AddressId,
+                Number = address.Number,
+                District = address.District,
+                Province = address.Province,
+                UserId = address.UserId
+            };
+        }
+
+        public async Task<bool> UpdateAsync(Guid id, AddressCreateUpdateDTO dto)
+        {
+            var address = await _repo.GetByIdAsync(id);
+            if (address == null) return false;
+
+            address.Number = dto.Number;
+            address.District = dto.District;
+            address.Province = dto.Province;
+            address.UserId = dto.UserId;
+
+            _repo.Update(address);
+            await _repo.SaveAsync();
+            return true;
+        }
+
+        public async Task<bool> DeleteAsync(Guid id)
         {
             var entity = await _repo.GetByIdAsync(id);
             if (entity == null) return false;
+
             _repo.Delete(entity);
             await _repo.SaveAsync();
             return true;

@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|d:\\ky8\\prn232\\adn-project\\prn232_adn_group2\\repository\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|d:\\ky8\\prn232\\adn-project\\prn232_adn_group2\\service\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|d:\\ky8\\prn232\\adn-project\\prn232_adn_group2\\adn_group2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -55,7 +68,7 @@
         },
         {
           "DockedWidth": 300,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -68,6 +81,47 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BlogRepository.cs",
+              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Repository\\Repository\\BlogRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repository\\BlogRepository.cs",
+              "ToolTip": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Repository\\Repository\\BlogRepository.cs",
+              "RelativeToolTip": "Repository\\Repository\\BlogRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T13:10:26.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BlogService.cs",
+              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\BlogService.cs",
+              "RelativeDocumentMoniker": "Service\\BlogService.cs",
+              "ToolTip": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\Service\\BlogService.cs",
+              "RelativeToolTip": "Service\\BlogService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T13:10:20.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\ADN_Group2\\Program.cs",
+              "RelativeDocumentMoniker": "ADN_Group2\\Program.cs",
+              "ToolTip": "D:\\Ky8\\PRN232\\ADN-Project\\PRN232_ADN_Group2\\ADN_Group2\\Program.cs",
+              "RelativeToolTip": "ADN_Group2\\Program.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAgwIQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T13:06:21.88Z"
             }
           ]
         }

@@ -7,6 +7,11 @@ using Repository.Repository;
 using Service.Auth;
 using ADN_Group2.BusinessObject.Identity;
 using System.Text;
+using Microsoft.OpenApi.Models;
+using Repository.Entity;
+using System.Reflection;
+using Service.Interface;
+using Service;
 
 namespace ADN_Group2
 {
@@ -45,18 +50,89 @@ namespace ADN_Group2
 				};
 			});
 
-			// Đăng ký DI cho Repository và Service
+
+			// Swagger Configuration
+			builder.Services.AddSwaggerGen(c =>
+			{
+				c.SwaggerDoc("v1", new OpenApiInfo
+				{
+					Title = "InterTransConnect API",
+					Version = "v1",
+					Description = "Services to InterTransConnect Website"
+				});
+
+				// Thm h? tr? XML Comments
+				var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+				var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+				c.IncludeXmlComments(xmlPath);
+
+				c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+				{
+					Name = "Authorization",
+					Type = SecuritySchemeType.Http,
+					Scheme = "Bearer",
+					BearerFormat = "JWT",
+					In = ParameterLocation.Header,
+					Description = "Please enter a valid token in the following format: {your token here} do not add the word 'Bearer' before it."
+				});
+
+				c.AddSecurityRequirement(new OpenApiSecurityRequirement
+				{
+					{
+						new OpenApiSecurityScheme
+						{
+							Reference = new OpenApiReference
+							{
+								Type = ReferenceType.SecurityScheme,
+								Id = "Bearer"
+							},
+							Scheme = "oauth2",
+							Name = "Bearer",
+							In = ParameterLocation.Header,
+						},
+						new List<string>()
+					}
+				});
+			});
+
+
+			// Add CORS services
+			builder.Services.AddCors(options =>
+			{
+				options.AddPolicy("AllowReactApp", builder =>
+				{
+					builder.WithOrigins("http://localhost:5173") // Allow your frontend origin
+						   .AllowAnyHeader()
+						   .AllowAnyMethod()
+						   .AllowCredentials(); // If you need to send cookies or auth headers
+				});
+			});
+
+			// Register DI for Repository and Service
 			builder.Services.AddScoped<UserRepository>();
 			builder.Services.AddScoped<AuthService>();
+			builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+			builder.Services.AddScoped<IAddressService, AddressService>();
+			builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+			builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+			builder.Services.AddScoped<IBlogRepository, BlogRepository>();
+			builder.Services.AddScoped<IBlogService, BlogService>();
+			builder.Services.AddScoped<IKitRepository, KitRepository>();
+			builder.Services.AddScoped<IKitService, KitService>();
+			builder.Services.AddScoped<ISampleKitRepository, SampleKitRepository>();
+			builder.Services.AddScoped<ISampleKitService, SampleKitService>();
+			builder.Services.AddScoped<ITestPersonRepository, TestPersonRepository>();
+			builder.Services.AddScoped<ITestPersonService, TestPersonService>();
+			builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+			builder.Services.AddScoped<IFeedbackService, FeedbackService>();
 
 			builder.Services.AddControllers();
-			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
 
 			var app = builder.Build();
 
-			// Configure the HTTP request pipeline.
+			// Configure the HTTP request pipeline
 			if (app.Environment.IsDevelopment())
 			{
 				app.UseSwagger();
@@ -64,11 +140,13 @@ namespace ADN_Group2
 			}
 
 			app.UseHttpsRedirection();
+			// Use CORS before Authentication and Authorization
+			app.UseCors("AllowReactApp");
 
-			app.UseAuthentication(); // Phải đặt trước UseAuthorization
+			app.UseAuthentication();
 			app.UseAuthorization();
 
-			// Seed roles khi khởi động ứng dụng
+			// Seed roles when the application starts
 			using (var scope = app.Services.CreateScope())
 			{
 				var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
