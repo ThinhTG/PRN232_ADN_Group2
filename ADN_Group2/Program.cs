@@ -119,8 +119,6 @@ namespace ADN_Group2
 			builder.Services.AddScoped<IBlogService, BlogService>();
 			builder.Services.AddScoped<IKitRepository, KitRepository>();
 			builder.Services.AddScoped<IKitService, KitService>();
-			builder.Services.AddScoped<ISampleKitRepository, SampleKitRepository>();
-			builder.Services.AddScoped<ISampleKitService, SampleKitService>();
 			builder.Services.AddScoped<ITestPersonRepository, TestPersonRepository>();
 			builder.Services.AddScoped<ITestPersonService, TestPersonService>();
 			builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
