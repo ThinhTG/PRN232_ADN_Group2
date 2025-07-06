@@ -34,7 +34,6 @@ namespace Repository.DBContext
 		public DbSet<TestResult> TestResults => Set<TestResult>();
 		public DbSet<Service> Services => Set<Service>();
 		public DbSet<Blog> Blogs => Set<Blog>();
-		public DbSet<SampleKit> SampleKits => Set<SampleKit>();
 		public DbSet<Feedback> Feedbacks => Set<Feedback>();
 		public DbSet<Kit> Kits => Set<Kit>();
 		public DbSet<Sample> Samples => Set<Sample>();
@@ -121,16 +120,6 @@ namespace Repository.DBContext
 					  .OnDelete(DeleteBehavior.Cascade);
 			});
 
-			// SampleKit
-			modelBuilder.Entity<SampleKit>(entity =>
-			{
-				entity.HasKey(sk => sk.Id);
-				entity.HasOne(sk => sk.Feedback)
-					  .WithMany()
-					  .HasForeignKey(sk => sk.FeedbackId)
-					  .OnDelete(DeleteBehavior.SetNull);
-			});
-
 			// Feedback
 			modelBuilder.Entity<Feedback>(entity =>
 			{
@@ -163,7 +152,14 @@ namespace Repository.DBContext
 					  .WithMany(k => k.Samples)
 					  .HasForeignKey(s => s.KitId)
 					  .OnDelete(DeleteBehavior.Cascade);
-			});
+                entity.HasOne(s => s.Person)
+					.WithOne()
+					.HasForeignKey<Sample>(s => s.PersonId)
+					.OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasIndex(s => s.PersonId)
+                    .IsUnique();
+            });
 
 			// TestPerson
 			modelBuilder.Entity<TestPerson>(entity =>

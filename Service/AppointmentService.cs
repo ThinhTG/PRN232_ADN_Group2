@@ -2,10 +2,6 @@ using Repository.Entity;
 using Repository.Repository;
 using Service.DTOs;
 using Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Service
 {

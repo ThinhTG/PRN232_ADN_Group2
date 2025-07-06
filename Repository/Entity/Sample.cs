@@ -10,5 +10,7 @@ namespace Repository.Entity
         public DateTime ReceivedDate { get; set; }
 
         public Kit Kit { get; set; }
+        public Guid PersonId { get; set; }
+        public TestPerson Person { get; set; }
     }
 } 
