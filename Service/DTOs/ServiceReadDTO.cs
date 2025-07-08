@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-
-namespace Repository.Entity
+﻿namespace Service.DTOs
 {
-    public class Service
+    public class ServiceReadDTO
     {
         public Guid ServiceId { get; set; }
         public string Name { get; set; }
@@ -12,8 +9,5 @@ namespace Repository.Entity
         public decimal Price { get; set; }
         public DateTime CreatedAt { get; set; }
         public string Type { get; set; }
-
-        public ICollection<Feedback> Feedbacks { get; set; }
-        public ICollection<Appointment> Appointments { get; set; }
     }
-} 
+}

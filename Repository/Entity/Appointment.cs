@@ -1,6 +1,4 @@
 using ADN_Group2.BusinessObject.Identity;
-using System;
-using System.Collections.Generic;
 
 namespace Repository.Entity
 {
@@ -10,7 +8,7 @@ namespace Repository.Entity
         public Guid UserId { get; set; }
         public Guid ServiceId { get; set; }
         public DateTime ScheduleDate { get; set; }
-        public int Status { get; set; }
+        public string Status { get; set; }
         public DateTime BookingDate { get; set; }
 
         public ApplicationUser User { get; set; }

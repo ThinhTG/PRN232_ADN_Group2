@@ -1,5 +1,7 @@
+﻿using Core.enums;
 using Repository.Entity;
 using Repository.Repository;
+using Service.Auth;
 using Service.DTOs;
 using Service.Interface;
 
@@ -8,9 +10,15 @@ namespace Service
     public class AppointmentService : IAppointmentService
     {
         private readonly IAppointmentRepository _repo;
-        public AppointmentService(IAppointmentRepository repo)
+        private readonly IServiceRepository _serviceRepo;
+        private readonly UserRepository _userRepository;
+        private readonly AuthService _authService;
+        public AppointmentService(IAppointmentRepository repo, IServiceRepository serviceRepo, UserRepository userRepository, AuthService authService)
         {
             _repo = repo;
+            _serviceRepo = serviceRepo;
+            _userRepository = userRepository;
+            _authService = authService;
         }
 
         public async Task<IEnumerable<AppointmentReadDTO>> GetAllAsync()
@@ -44,19 +52,20 @@ namespace Service
 
         public async Task<AppointmentReadDTO> AddAsync(AppointmentCreateUpdateDTO dto)
         {
+
             var appointment = new Appointment
             {
                 AppointmentId = Guid.NewGuid(),
-                UserId = dto.UserId,
+                UserId = Guid.Parse(_authService.GetUserId()),
                 ServiceId = dto.ServiceId,
                 ScheduleDate = dto.ScheduleDate,
-                Status = dto.Status ?? 0, // Default status to 0 (e.g., Pending)
+                Status = AppointmentStatus.Pending.ToString(), // Default status to 0 (e.g., Pending)
                 BookingDate = DateTime.UtcNow
             };
 
             await _repo.AddAsync(appointment);
             await _repo.SaveAsync();
-
+            var sv = await _serviceRepo.GetByIdAsync(dto.ServiceId);
             return new AppointmentReadDTO
             {
                 AppointmentId = appointment.AppointmentId,
@@ -64,7 +73,8 @@ namespace Service
                 ServiceId = appointment.ServiceId,
                 ScheduleDate = appointment.ScheduleDate,
                 Status = appointment.Status,
-                BookingDate = appointment.BookingDate
+                BookingDate = appointment.BookingDate,
+                TotalPrice = sv.Price
             };
         }
 
@@ -73,13 +83,9 @@ namespace Service
             var appointment = await _repo.GetByIdAsync(id);
             if (appointment == null) return false;
 
-            appointment.UserId = dto.UserId;
+            appointment.UserId = Guid.Parse(_authService.GetUserId());
             appointment.ServiceId = dto.ServiceId;
             appointment.ScheduleDate = dto.ScheduleDate;
-            if(dto.Status.HasValue)
-            {
-                appointment.Status = dto.Status.Value;
-            }
             
             _repo.Update(appointment);
             await _repo.SaveAsync();

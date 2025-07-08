@@ -12,8 +12,8 @@ using Repository.DBContext;
 namespace Repository.Migrations
 {
     [DbContext(typeof(ADNDbContext))]
-    [Migration("20250619075908_123")]
-    partial class _123
+    [Migration("20250708074911_updateDB")]
+    partial class updateDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -352,8 +352,9 @@ namespace Repository.Migrations
                     b.Property<Guid>("ServiceId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -453,16 +454,21 @@ namespace Repository.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Amount")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("AppointmentId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("OrderCode")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("PaidDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PaymentId");
 
@@ -483,6 +489,9 @@ namespace Repository.Migrations
                     b.Property<Guid>("KitId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("PersonId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("ReceivedDate")
                         .HasColumnType("datetime2");
 
@@ -490,30 +499,10 @@ namespace Repository.Migrations
 
                     b.HasIndex("KitId");
 
+                    b.HasIndex("PersonId")
+                        .IsUnique();
+
                     b.ToTable("Samples");
-                });
-
-            modelBuilder.Entity("Repository.Entity.SampleKit", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<Guid?>("ApplicationUserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("FeedbackId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId");
-
-                    b.HasIndex("FeedbackId");
-
-                    b.ToTable("SampleKits");
                 });
 
             modelBuilder.Entity("Repository.Entity.Service", b =>
@@ -537,6 +526,10 @@ namespace Repository.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -745,21 +738,15 @@ namespace Repository.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Repository.Entity.TestPerson", "Person")
+                        .WithOne()
+                        .HasForeignKey("Repository.Entity.Sample", "PersonId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Kit");
-                });
 
-            modelBuilder.Entity("Repository.Entity.SampleKit", b =>
-                {
-                    b.HasOne("ADN_Group2.BusinessObject.Identity.ApplicationUser", null)
-                        .WithMany("SampleKits")
-                        .HasForeignKey("ApplicationUserId");
-
-                    b.HasOne("Repository.Entity.Feedback", "Feedback")
-                        .WithMany()
-                        .HasForeignKey("FeedbackId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("Feedback");
+                    b.Navigation("Person");
                 });
 
             modelBuilder.Entity("Repository.Entity.TestPerson", b =>
@@ -793,8 +780,6 @@ namespace Repository.Migrations
                     b.Navigation("Blogs");
 
                     b.Navigation("Feedbacks");
-
-                    b.Navigation("SampleKits");
 
                     b.Navigation("UserRoles");
                 });
