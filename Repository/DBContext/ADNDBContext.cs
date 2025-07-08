@@ -66,9 +66,15 @@ namespace Repository.DBContext
 					.HasForeignKey(ur => ur.RoleId)
 					.OnDelete(DeleteBehavior.NoAction);
 			});
+            modelBuilder.Entity<Payment>()
+			   .Property(p => p.Amount)
+			   .HasPrecision(18, 2); // 18 chữ số tổng, 2 chữ số sau dấu phẩy
 
-			// Appointment
-			modelBuilder.Entity<Appointment>(entity =>
+            modelBuilder.Entity<Service>()
+                .Property(s => s.Price)
+                .HasPrecision(18, 2);
+            // Appointment
+            modelBuilder.Entity<Appointment>(entity =>
 			{
 				entity.HasKey(a => a.AppointmentId);
 				entity.HasOne(a => a.User)

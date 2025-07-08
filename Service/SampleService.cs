@@ -1,8 +1,6 @@
 using Repository.Entity;
 using Repository.Repository;
 using Service.Interface;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Service
 {

@@ -1,15 +1,11 @@
 using ADN_Group2.BusinessObject.Identity;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Repository.Repository;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Service.Auth
 {
@@ -17,13 +13,27 @@ namespace Service.Auth
     {
         private readonly UserRepository _userRepository;
         private readonly IConfiguration _configuration;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AuthService(UserRepository userRepository, IConfiguration configuration)
+        public AuthService(UserRepository userRepository, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             _userRepository = userRepository;
             _configuration = configuration;
+            _httpContextAccessor = httpContextAccessor;
         }
+        public string GetUserId()
+        {
+            var user = _httpContextAccessor.HttpContext?.User;
+            
+            if (user == null)
+                throw new Exception("HttpContext.User is null");
+            if (!user.Identity?.IsAuthenticated == true)
+                throw new Exception("User is not authenticated. Claims: " + string.Join(", ", user.Claims.Select(c => $"{c.Type}:{c.Value}")));
+            var id = user.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Sub)?.Value
+      ?? user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            return id ?? throw new Exception("User ID not found in token.");
 
+        }
         public async Task<(bool Success, string Token, string Error)> LoginAsync(string email, string password)
         {
             var user = await _userRepository.FindByEmailAsync(email);
@@ -57,11 +67,12 @@ namespace Service.Auth
         private async Task<string> GenerateJwtToken(ApplicationUser user)
         {
             var claims = new List<Claim>
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim("FullName", user.FullName ?? "")
-            };
+                        {
+                            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                            new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                            new Claim("FullName", user.FullName ?? ""),
+                            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) // Thêm dòng này
+                        };
 
             var roles = await _userRepository.GetRolesAsync(user);
             claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));

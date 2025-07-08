@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using Net.payOS.Types;
 using Repository.Entity;
+using Service.DTOs;
 using Service.Interface;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ADN_Group2.Controllers
 {
@@ -27,13 +27,36 @@ namespace ADN_Group2.Controllers
             return entity;
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Payment>> Create(Payment entity)
+        [HttpPost("create-link")]
+        public async Task<ActionResult<CreatePaymentResult>> Create(PaymentResponse model)
         {
-            var created = await _service.AddAsync(entity);
-            return CreatedAtAction(nameof(GetById), new { id = created.PaymentId }, created);
-        }
+            try
+            {
+                var created = await _service.CreateLinkAsync(model);
+                return Ok(created);
+            }
+            catch (Exception ex)
+            {
 
+                return BadRequest(new { message = "An error occurred while creating the payment link.", details = ex.Message });
+
+            }
+        }
+        [HttpPost("check-payment")]
+        public async Task<ActionResult> CheckPaymentAsync(string orderCode)
+        {
+            try
+            {
+                await _service.CheckStatusAsync(orderCode);
+                return Ok(new { message = "Payment status checked successfully." });
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(new { message = "An error occurred while creating the payment link.", details = ex.Message });
+            }
+            
+        }
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(System.Guid id, Payment entity)
         {

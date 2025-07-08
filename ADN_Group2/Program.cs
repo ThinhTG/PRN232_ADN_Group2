@@ -1,17 +1,18 @@
+using ADN_Group2.BusinessObject.Identity;
+using ADN_Group2.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using Net.payOS;
 using Repository.DBContext;
 using Repository.Repository;
-using Service.Auth;
-using ADN_Group2.BusinessObject.Identity;
-using System.Text;
-using Microsoft.OpenApi.Models;
-using Repository.Entity;
-using System.Reflection;
-using Service.Interface;
 using Service;
+using Service.Auth;
+using Service.Interface;
+using System.Reflection;
+using System.Text;
 
 namespace ADN_Group2
 {
@@ -49,16 +50,19 @@ namespace ADN_Group2
 					IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:SecretKey"]))
 				};
 			});
+            PayOS payOS = new PayOS(builder.Configuration["PayOS:ClientId"] ?? throw new Exception("Cannot find payment environment"),
+                    builder.Configuration["PayOS:ApiKey"] ?? throw new Exception("Cannot find payment environment"),
+                    builder.Configuration["PayOS:ChecksumKey"] ?? throw new Exception("Cannot find payment environment"));
+            builder.Services.AddSingleton(payOS);
 
-
-			// Swagger Configuration
-			builder.Services.AddSwaggerGen(c =>
+            // Swagger Configuration
+            builder.Services.AddSwaggerGen(c =>
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo
 				{
-					Title = "InterTransConnect API",
+					Title = "ADN",
 					Version = "v1",
-					Description = "Services to InterTransConnect Website"
+					Description = "Services to ADN Website"
 				});
 
 				// Thm h? tr? XML Comments
@@ -113,18 +117,22 @@ namespace ADN_Group2
 			builder.Services.AddScoped<AuthService>();
 			builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 			builder.Services.AddScoped<IAddressService, AddressService>();
-			builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+            builder.Services.AddScoped<IServiceService, ServiceService>();
+            builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 			builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 			builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 			builder.Services.AddScoped<IBlogService, BlogService>();
-			builder.Services.AddScoped<IKitRepository, KitRepository>();
+			builder.Services.AddScoped<IPaymentService, PaymentService>();
+            builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+            builder.Services.AddScoped<IKitRepository, KitRepository>();
 			builder.Services.AddScoped<IKitService, KitService>();
-			builder.Services.AddScoped<ITestPersonRepository, TestPersonRepository>();
+            builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
+            builder.Services.AddScoped<ITestPersonRepository, TestPersonRepository>();
 			builder.Services.AddScoped<ITestPersonService, TestPersonService>();
 			builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 			builder.Services.AddScoped<IFeedbackService, FeedbackService>();
-
-			builder.Services.AddControllers();
+            builder.Services.AddHttpContextAccessor();
+            builder.Services.AddControllers();
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
 
@@ -157,8 +165,8 @@ namespace ADN_Group2
 					}
 				}
 			}
-
-			app.MapControllers();
+            app.UseSimpleExceptionMiddleware();
+            app.MapControllers();
 
 			app.Run();
 		}
