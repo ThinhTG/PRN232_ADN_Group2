@@ -6,12 +6,10 @@ namespace Service.Interface
 {
     public interface IPaymentService
     {
-        Task<IEnumerable<Payment>> GetAllAsync();
+        Task<IEnumerable<PaymentReadDTO>> GetAllAsync();
         Task<CreatePaymentResult> CreateLinkAsync(PaymentResponse request);
         Task CheckStatusAsync(string orderCode);
-        Task<Payment> GetByIdAsync(object id);
-        Task<Payment> AddAsync(Payment entity);
-        Task<Payment> UpdateAsync(Payment entity);
+        Task<PaymentReadDTO> GetByIdAsync(object id);
         Task<bool> DeleteAsync(object id);
     }
 } 

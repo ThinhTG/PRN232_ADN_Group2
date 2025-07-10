@@ -10,7 +10,7 @@ namespace Repository.Entity
         public DateTime ScheduleDate { get; set; }
         public string Status { get; set; }
         public DateTime BookingDate { get; set; }
-
+        public bool IsHomeKit { get; set; }
         public ApplicationUser User { get; set; }
         public Service Service { get; set; }
         public ICollection<Payment> Payments { get; set; }

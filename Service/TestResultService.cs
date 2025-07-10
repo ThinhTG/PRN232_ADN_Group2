@@ -1,8 +1,7 @@
-using Repository.Entity;
+﻿using Repository.Entity;
 using Repository.Repository;
+using Service.DTOs;
 using Service.Interface;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Service
 {
@@ -14,27 +13,65 @@ namespace Service
             _repo = repo;
         }
 
-        public async Task<IEnumerable<TestResult>> GetAllAsync() => await _repo.GetAllAsync();
-        public async Task<TestResult> GetByIdAsync(object id) => await _repo.GetByIdAsync(id);
-        public async Task<TestResult> AddAsync(TestResult entity)
+        public async Task<IEnumerable<TestResultReadDTO>> GetAllAsync()
         {
+            var results = await _repo.GetAllAsync();
+            return results.Select(r => MapToReadDTO(r));
+        }
+
+        public async Task<TestResultReadDTO> GetByIdAsync(object id)
+        {
+            var result = await _repo.GetByIdAsync(id);
+            return result == null ? null : MapToReadDTO(result);
+        }
+
+        public async Task<TestResultReadDTO> AddAsync(TestResultCreateUpdateDTO dto)
+        {
+            var entity = new TestResult
+            {
+                AppointmentId = dto.AppointmentId,
+                ResultDate = dto.ResultDate,
+                Description = dto.Description
+            };
+
             await _repo.AddAsync(entity);
             await _repo.SaveAsync();
-            return entity;
+
+            return MapToReadDTO(entity);
         }
-        public async Task<TestResult> UpdateAsync(TestResult entity)
+
+        public async Task<TestResultReadDTO> UpdateAsync(int id,TestResultCreateUpdateDTO dto)
         {
-            _repo.Update(entity);
+            // Giả định rằng DTO có chứa `ResultId` (bạn nên thêm vào class)
+            var existing = await _repo.GetByIdAsync(id);
+            if (existing == null) return null;
+
+            existing.AppointmentId = dto.AppointmentId;
+            existing.ResultDate = dto.ResultDate;
+            existing.Description = dto.Description;
+
+            _repo.Update(existing);
             await _repo.SaveAsync();
-            return entity;
+
+            return MapToReadDTO(existing);
         }
+
         public async Task<bool> DeleteAsync(object id)
         {
             var entity = await _repo.GetByIdAsync(id);
             if (entity == null) return false;
+
             _repo.Delete(entity);
             await _repo.SaveAsync();
             return true;
         }
+
+        private TestResultReadDTO MapToReadDTO(TestResult entity) => new()
+        {
+            ResultId = entity.ResultId,
+            AppointmentId = entity.AppointmentId,
+            ResultDate = entity.ResultDate,
+            Description = entity.Description
+        };
     }
-} 
+}

@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Repository.Entity;
+using Service.DTOs;
 using Service.Interface;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ADN_Group2.Controllers
 {
@@ -17,10 +15,10 @@ namespace ADN_Group2.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<TestResult>> GetAll() => await _service.GetAllAsync();
+        public async Task<IEnumerable<TestResultReadDTO>> GetAll() => await _service.GetAllAsync();
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<TestResult>> GetById(int id)
+        public async Task<ActionResult<TestResultReadDTO>> GetById(int id)
         {
             var entity = await _service.GetByIdAsync(id);
             if (entity == null) return NotFound();
@@ -28,22 +26,21 @@ namespace ADN_Group2.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<TestResult>> Create(TestResult entity)
+        public async Task<ActionResult<TestResultReadDTO>> Create(TestResultCreateUpdateDTO entity)
         {
             var created = await _service.AddAsync(entity);
             return CreatedAtAction(nameof(GetById), new { id = created.ResultId }, created);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, TestResult entity)
+        public async Task<IActionResult> Update(int id, TestResultCreateUpdateDTO entity)
         {
-            if (id != entity.ResultId) return BadRequest();
-            await _service.UpdateAsync(entity);
+            await _service.UpdateAsync(id,entity);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             var deleted = await _service.DeleteAsync(id);
             if (!deleted) return NotFound();

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace Repository.Entity
 {
     public class Service
