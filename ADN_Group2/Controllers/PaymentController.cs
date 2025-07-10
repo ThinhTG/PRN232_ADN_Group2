@@ -17,10 +17,10 @@ namespace ADN_Group2.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Payment>> GetAll() => await _service.GetAllAsync();
+        public async Task<IEnumerable<PaymentReadDTO>> GetAll() => await _service.GetAllAsync();
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Payment>> GetById(System.Guid id)
+        public async Task<ActionResult<PaymentReadDTO>> GetById(Guid id)
         {
             var entity = await _service.GetByIdAsync(id);
             if (entity == null) return NotFound();
@@ -57,14 +57,6 @@ namespace ADN_Group2.Controllers
             }
             
         }
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(System.Guid id, Payment entity)
-        {
-            if (id != entity.PaymentId) return BadRequest();
-            await _service.UpdateAsync(entity);
-            return NoContent();
-        }
-
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(System.Guid id)
         {

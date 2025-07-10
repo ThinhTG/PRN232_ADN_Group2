@@ -58,6 +58,7 @@ namespace Service
                 AppointmentId = Guid.NewGuid(),
                 UserId = Guid.Parse(_authService.GetUserId()),
                 ServiceId = dto.ServiceId,
+                IsHomeKit = dto.IsHomeKit,
                 ScheduleDate = dto.ScheduleDate,
                 Status = AppointmentStatus.Pending.ToString(), // Default status to 0 (e.g., Pending)
                 BookingDate = DateTime.UtcNow

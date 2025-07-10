@@ -126,7 +126,11 @@ namespace ADN_Group2
             builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
             builder.Services.AddScoped<IKitRepository, KitRepository>();
 			builder.Services.AddScoped<IKitService, KitService>();
+            builder.Services.AddScoped<ISampleService, SampleService>();
+            builder.Services.AddScoped<ISampleRepository, SampleRepository>();
             builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
+            builder.Services.AddScoped<ITestResultService, TestResultService>();
+            builder.Services.AddScoped<ITestResultRepository, TestResultRepository>();
             builder.Services.AddScoped<ITestPersonRepository, TestPersonRepository>();
 			builder.Services.AddScoped<ITestPersonService, TestPersonService>();
 			builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();

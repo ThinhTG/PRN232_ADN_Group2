@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Repository.Entity;
+using Service.DTOs;
 using Service.Interface;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ADN_Group2.Controllers
 {
@@ -17,10 +15,10 @@ namespace ADN_Group2.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Sample>> GetAll() => await _service.GetAllAsync();
+        public async Task<IEnumerable<SampleReadDTO>> GetAll() => await _service.GetAllAsync();
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Sample>> GetById(System.Guid id)
+        public async Task<ActionResult<SampleReadDTO>> GetById(System.Guid id)
         {
             var entity = await _service.GetByIdAsync(id);
             if (entity == null) return NotFound();
@@ -28,18 +26,17 @@ namespace ADN_Group2.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Sample>> Create(Sample entity)
+        public async Task<ActionResult<SampleReadDTO>> Create(SampleCreateUpdateDTO entity)
         {
             var created = await _service.AddAsync(entity);
             return CreatedAtAction(nameof(GetById), new { id = created.SampleId }, created);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(System.Guid id, Sample entity)
+        public async Task<IActionResult> Update(System.Guid id, SampleCreateUpdateDTO entity)
         {
-            if (id != entity.SampleId) return BadRequest();
-            await _service.UpdateAsync(entity);
-            return NoContent();
+            await _service.UpdateAsync(id,entity);
+            return Ok("update successfully");
         }
 
         [HttpDelete("{id}")]

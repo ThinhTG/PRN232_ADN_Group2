@@ -1,4 +1,4 @@
-using Repository.Entity;
+﻿using Repository.Entity;
 using Repository.Repository;
 using Service.DTOs;
 using Net.payOS;
@@ -24,20 +24,31 @@ namespace Service
             _appointmentRepo = appointmentRepo;
         }
 
-        public async Task<IEnumerable<Payment>> GetAllAsync() => await _repo.GetAllAsync();
-        public async Task<Payment> GetByIdAsync(object id) => await _repo.GetByIdAsync(id);
-        public async Task<Payment> AddAsync(Payment entity)
+        public async Task<IEnumerable<PaymentReadDTO>> GetAllAsync()
         {
-            await _repo.AddAsync(entity);
-            await _repo.SaveAsync();
-            return entity;
+            var payments = await _repo.GetAllAsync();
+            return payments.Select(MapToReadDTO);
         }
-        public async Task<Payment> UpdateAsync(Payment entity)
+
+        public async Task<PaymentReadDTO> GetByIdAsync(object id)
         {
-            _repo.Update(entity);
-            await _repo.SaveAsync();
-            return entity;
+            var entity = await _repo.GetByIdAsync(id);
+            return entity == null ? null : MapToReadDTO(entity);
         }
+
+        // Mapping
+        private PaymentReadDTO MapToReadDTO(Payment entity)
+        {
+            return new PaymentReadDTO
+            {
+                PaymentId = entity.PaymentId,
+                AppointmentId = entity.AppointmentId,
+                Amount = entity.Amount,
+                Status = entity.Status,
+                PaidDate = entity.PaidDate
+            };
+        }
+    
         public async Task<bool> DeleteAsync(object id)
         {
             var entity = await _repo.GetByIdAsync(id);

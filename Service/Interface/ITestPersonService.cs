@@ -1,15 +1,12 @@
-using Repository.Entity;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
+using Service.DTOs;
 namespace Service.Interface
 {
     public interface ITestPersonService
     {
-        Task<IEnumerable<TestPerson>> GetAllAsync();
-        Task<TestPerson> GetByIdAsync(object id);
-        Task<TestPerson> AddAsync(TestPerson entity);
-        Task<TestPerson> UpdateAsync(TestPerson entity);
+        Task<IEnumerable<TestPersonReadDTO>> GetAllAsync();
+        Task<TestPersonReadDTO> GetByIdAsync(object id);
+        Task<TestPersonReadDTO> AddAsync(TestPersonCreateUpdateDTO entity);
+        Task<TestPersonReadDTO> UpdateAsync(Guid id,TestPersonCreateUpdateDTO entity);
         Task<bool> DeleteAsync(object id);
     }
 } 
