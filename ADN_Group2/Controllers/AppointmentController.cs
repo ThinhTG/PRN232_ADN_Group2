@@ -19,11 +19,23 @@ namespace ADN_Group2.Controllers
         {
             var appointments = await _service.GetAllAsync();
             return Ok(appointments);
-        }
+        } 
         [HttpGet("appointment-of-user")]
         public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> GetAppointmentByUserIdAsync(Guid userId)
         {
             var appointments = await _service.GetAppointmentByUserIdAsync(userId);
+            return Ok(appointments);
+        }
+
+		/// <summary>
+		/// Get All Appointments by Status
+		/// </summary>
+		/// <param name="status"></param>
+		/// <returns></returns>
+		[HttpGet("by-status")]
+        public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> GetByStatus(string status)
+        {
+            var appointments = await _service.GetByStatusAsync(status);
             return Ok(appointments);
         }
         [HttpGet("{id}")]

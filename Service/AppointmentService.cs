@@ -115,5 +115,19 @@ namespace Service
                 BookingDate = a.BookingDate
             });
         }
+
+        public async Task<IEnumerable<AppointmentReadDTO>> GetByStatusAsync(string status)
+        {
+            var appointments = await _repo.GetByStatusAsync(status);
+            return appointments.Select(a => new AppointmentReadDTO
+            {
+                AppointmentId = a.AppointmentId,
+                UserId = a.UserId,
+                ServiceId = a.ServiceId,
+                ScheduleDate = a.ScheduleDate,
+                Status = a.Status,
+                BookingDate = a.BookingDate
+            });
+        }
     }
 } 
