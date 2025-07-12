@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Service.DTOs;
 using Service.Interface;
 
@@ -45,6 +45,30 @@ namespace ADN_Group2.Controllers
             var deleted = await _service.DeleteAsync(id);
             if (!deleted) return NotFound();
             return NoContent();
+        }
+
+		/// <summary>
+		/// User lấy mẫu ( nhập ApointmentId và danh sách SampleIds lấy mẫu)
+		/// </summary>
+		/// <param name="dto"></param>
+		/// <returns></returns>
+		[HttpPost("collect")]
+        public async Task<IActionResult> CollectSamples([FromBody] SampleCollectDTO dto)
+        {
+            await _service.CollectSamplesAsync(dto);
+            return Ok("Samples collected");
+        }
+
+		/// <summary>
+		/// Staff xác nhận đã nhận mẫu ( nhập SampleIds và ngày nhận mẫu )
+		/// </summary>
+		/// <param name="dto"></param>
+		/// <returns></returns>
+		[HttpPost("receive")]
+        public async Task<IActionResult> ReceiveSamples([FromBody] SampleReceiveDTO dto)
+        {
+            await _service.ReceiveSamplesAsync(dto);
+            return Ok("Samples received.");
         }
     }
 } 

@@ -9,5 +9,7 @@ namespace Service.Interface
         Task<SampleReadDTO> AddAsync(SampleCreateUpdateDTO entity);
         Task<SampleReadDTO> UpdateAsync(Guid id,SampleCreateUpdateDTO entity);
         Task<bool> DeleteAsync(object id);
+        Task CollectSamplesAsync(SampleCollectDTO dto);
+        Task ReceiveSamplesAsync(SampleReceiveDTO dto);
     }
 } 

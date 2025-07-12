@@ -18,7 +18,7 @@ namespace ADN_Group2.Controllers
         /// 
         /// </summary>
         /// <param name="isHomeKit"> nếu là null thì sẽ lấy tất cả</param>
-        /// <param name="status"> --: Lấy tất cả,  1: Pending,   2:WaitingToCollect,   3:InProgress,    4: Completed </param>
+        /// <param name="status"> --: Lấy tất cả,  1: Pending,   2:WaitingToCollect,  3:InProgress,    4: Completed, 5: Collected </param>
         /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> 
@@ -62,6 +62,14 @@ namespace ADN_Group2.Controllers
             var deleted = await _service.DeleteAsync(id);
             if (!deleted) return NotFound();
             return NoContent();
+        }
+
+        [HttpGet("need-collect")]
+        public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> GetNeedCollectByUser(Guid userId, AppointmentStatus? status)
+        {
+            var all = await _service.GetAppointmentByUserIdAsync(userId);
+            var filtered = all.Where(a => (status == null || a.Status == status.ToString()) && ( a.IsHomeKit == true)).ToList();
+            return Ok(filtered);
         }
     }
 } 
