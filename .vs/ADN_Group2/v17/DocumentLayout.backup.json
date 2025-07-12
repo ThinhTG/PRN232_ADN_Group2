@@ -1,158 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\",
+  "WorkspaceRootPath": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|d:\\ky8\\prn232\\pj\\prn232_adn_group2\\adn_group2\\controllers\\samplecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\controllers\\samplecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\dtos\\appointmentreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\dtos\\appointmentreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\adn_group2\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\adn_group2\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\adn_group2\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\adn_group2\\controllers\\kitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\controllers\\kitcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{79DEFC09-7D33-4379-BC71-0932AFD4390D}|Core\\Core.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\core\\enums\\appointmentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{79DEFC09-7D33-4379-BC71-0932AFD4390D}|Core\\Core.csproj|d:\\ky8\\prn232\\pj\\prn232_adn_group2\\core\\enums\\appointmentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{79DEFC09-7D33-4379-BC71-0932AFD4390D}|Core\\Core.csproj|solutionrelative:core\\enums\\appointmentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\repository\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|d:\\ky8\\prn232\\pj\\prn232_adn_group2\\adn_group2\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\repository\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|d:\\ky8\\prn232\\pj\\prn232_adn_group2\\repository\\entity\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\interface\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\interface\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\serviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\serviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\adn_group2\\controllers\\testpersoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\controllers\\testpersoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\interface\\itestpersonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\interface\\itestpersonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\testpersonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\testpersonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\migrations\\adndbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\migrations\\adndbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\migrations\\20250712052246_updatefeedbackaddappointmentid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\migrations\\20250712052246_updatefeedbackaddappointmentid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\adn_group2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\entity\\testperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\testperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\dbcontext\\adndbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|d:\\ky8\\prn232\\pj\\prn232_adn_group2\\repository\\dbcontext\\adndbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\dbcontext\\adndbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\migrations\\20250708074911_updatedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\migrations\\20250708074911_updatedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\migrations\\20250710191620_updateappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\migrations\\20250710191620_updateappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\migrations\\20250712052245_updateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\migrations\\20250712052245_updateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\testresultservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\testresultservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\repository\\testpersonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\testpersonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\repository\\samplerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\samplerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\adn_group2\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\dtos\\servicereaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\dtos\\servicereaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\dtos\\servicecreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\dtos\\servicecreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\entity\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\adn_group2\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A52718AD-D537-43EF-AB6E-8C3524D688E9}|ADN_Group2\\ADN_Group2.csproj|solutionrelative:adn_group2\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\repository\\entity\\identity\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD9626-A2B5-4109-8429-A990F7828275}|Repository\\Repository.csproj|solutionrelative:repository\\entity\\identity\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\dtos\\usercreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\dtos\\usercreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|f:\\hoctap\\prn333\\project\\prn232_adn_group2\\service\\dtos\\userreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9560432-AE74-4C8F-B1CD-8734F910EEF8}|Service\\Service.csproj|solutionrelative:service\\dtos\\userreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -162,27 +30,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 11,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 15,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -191,6 +51,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
@@ -207,12 +71,79 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppointmentStatus.cs",
+              "DocumentMoniker": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Core\\enums\\AppointmentStatus.cs",
+              "RelativeDocumentMoniker": "Core\\enums\\AppointmentStatus.cs",
+              "ToolTip": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Core\\enums\\AppointmentStatus.cs",
+              "RelativeToolTip": "Core\\enums\\AppointmentStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T15:27:46.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppointmentController.cs",
+              "DocumentMoniker": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\AppointmentController.cs",
+              "RelativeDocumentMoniker": "ADN_Group2\\Controllers\\AppointmentController.cs",
+              "ToolTip": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\AppointmentController.cs",
+              "RelativeToolTip": "ADN_Group2\\Controllers\\AppointmentController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBgAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T15:27:34.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ADNDBContext.cs",
+              "DocumentMoniker": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Repository\\DBContext\\ADNDBContext.cs",
+              "RelativeDocumentMoniker": "Repository\\DBContext\\ADNDBContext.cs",
+              "ToolTip": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Repository\\DBContext\\ADNDBContext.cs",
+              "RelativeToolTip": "Repository\\DBContext\\ADNDBContext.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAwwIQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T15:01:25.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Repository\\Entity\\Feedback.cs",
+              "RelativeDocumentMoniker": "Repository\\Entity\\Feedback.cs",
+              "ToolTip": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Repository\\Entity\\Feedback.cs",
+              "RelativeToolTip": "Repository\\Entity\\Feedback.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T15:00:41.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SampleController.cs",
+              "DocumentMoniker": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\SampleController.cs",
+              "RelativeDocumentMoniker": "ADN_Group2\\Controllers\\SampleController.cs",
+              "ToolTip": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\SampleController.cs",
+              "RelativeToolTip": "ADN_Group2\\Controllers\\SampleController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T14:48:51.793Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 300,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -225,505 +156,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppointmentController.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\AppointmentController.cs",
-              "RelativeDocumentMoniker": "ADN_Group2\\Controllers\\AppointmentController.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\AppointmentController.cs",
-              "RelativeToolTip": "ADN_Group2\\Controllers\\AppointmentController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAxwBQAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-06T15:08:51.664Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppointmentReadDTO.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\DTOs\\AppointmentReadDTO.cs",
-              "RelativeDocumentMoniker": "Service\\DTOs\\AppointmentReadDTO.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\DTOs\\AppointmentReadDTO.cs",
-              "RelativeToolTip": "Service\\DTOs\\AppointmentReadDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T09:13:36.615Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IAppointmentRepository.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\IAppointmentRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repository\\IAppointmentRepository.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\IAppointmentRepository.cs",
-              "RelativeToolTip": "Repository\\Repository\\IAppointmentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:28:22.894Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AppointmentRepository.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\AppointmentRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repository\\AppointmentRepository.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\AppointmentRepository.cs",
-              "RelativeToolTip": "Repository\\Repository\\AppointmentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:25:50.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppointmentService.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\AppointmentService.cs",
-              "RelativeDocumentMoniker": "Service\\AppointmentService.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\AppointmentService.cs",
-              "RelativeToolTip": "Service\\AppointmentService.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAkwHUAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T04:56:34.632Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "KitController.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\KitController.cs",
-              "RelativeDocumentMoniker": "ADN_Group2\\Controllers\\KitController.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\KitController.cs",
-              "RelativeToolTip": "ADN_Group2\\Controllers\\KitController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T09:06:56.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppointmentStatus.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Core\\enums\\AppointmentStatus.cs",
-              "RelativeDocumentMoniker": "Core\\enums\\AppointmentStatus.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Core\\enums\\AppointmentStatus.cs",
-              "RelativeToolTip": "Core\\enums\\AppointmentStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:51:46.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ServiceController.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\ServiceController.cs",
-              "RelativeDocumentMoniker": "ADN_Group2\\Controllers\\ServiceController.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\ServiceController.cs",
-              "RelativeToolTip": "ADN_Group2\\Controllers\\ServiceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T09:06:58.607Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PaymentController.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\PaymentController.cs",
-              "RelativeDocumentMoniker": "ADN_Group2\\Controllers\\PaymentController.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\PaymentController.cs",
-              "RelativeToolTip": "ADN_Group2\\Controllers\\PaymentController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBYAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:13:36.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IAppointmentService.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\Interface\\IAppointmentService.cs",
-              "RelativeDocumentMoniker": "Service\\Interface\\IAppointmentService.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\Interface\\IAppointmentService.cs",
-              "RelativeToolTip": "Service\\Interface\\IAppointmentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAABkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:40:01.893Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PaymentService.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\PaymentService.cs",
-              "RelativeDocumentMoniker": "Service\\PaymentService.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\PaymentService.cs",
-              "RelativeToolTip": "Service\\PaymentService.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAswHEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:14:38.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ServiceService.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\ServiceService.cs",
-              "RelativeDocumentMoniker": "Service\\ServiceService.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\ServiceService.cs",
-              "RelativeToolTip": "Service\\ServiceService.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwEcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:20:44.359Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TestPersonController.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\TestPersonController.cs",
-              "RelativeDocumentMoniker": "ADN_Group2\\Controllers\\TestPersonController.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\TestPersonController.cs",
-              "RelativeToolTip": "ADN_Group2\\Controllers\\TestPersonController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAYwB8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T07:25:06.021Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ITestPersonService.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\Interface\\ITestPersonService.cs",
-              "RelativeDocumentMoniker": "Service\\Interface\\ITestPersonService.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\Interface\\ITestPersonService.cs",
-              "RelativeToolTip": "Service\\Interface\\ITestPersonService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:44:12.545Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TestPersonService.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\TestPersonService.cs",
-              "RelativeDocumentMoniker": "Service\\TestPersonService.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\TestPersonService.cs",
-              "RelativeToolTip": "Service\\TestPersonService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:00:01.224Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AddressService.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\AddressService.cs",
-              "RelativeDocumentMoniker": "Service\\AddressService.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\AddressService.cs",
-              "RelativeToolTip": "Service\\AddressService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBUAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T04:56:33.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BlogRepository.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\BlogRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repository\\BlogRepository.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\BlogRepository.cs",
-              "RelativeToolTip": "Repository\\Repository\\BlogRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:25:49.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "20250712052246_UpdateFeedbackAddAppointmentId.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Migrations\\20250712052246_UpdateFeedbackAddAppointmentId.cs",
-              "RelativeDocumentMoniker": "Repository\\Migrations\\20250712052246_UpdateFeedbackAddAppointmentId.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Migrations\\20250712052246_UpdateFeedbackAddAppointmentId.cs",
-              "RelativeToolTip": "Repository\\Migrations\\20250712052246_UpdateFeedbackAddAppointmentId.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:07:20.936Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ADNDbContextModelSnapshot.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Migrations\\ADNDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Repository\\Migrations\\ADNDbContextModelSnapshot.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Migrations\\ADNDbContextModelSnapshot.cs",
-              "RelativeToolTip": "Repository\\Migrations\\ADNDbContextModelSnapshot.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:07:28.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\appsettings.json",
-              "RelativeDocumentMoniker": "ADN_Group2\\appsettings.json",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\appsettings.json",
-              "RelativeToolTip": "ADN_Group2\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-12T08:12:04.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ADNDBContext.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\DBContext\\ADNDBContext.cs",
-              "RelativeDocumentMoniker": "Repository\\DBContext\\ADNDBContext.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\DBContext\\ADNDBContext.cs",
-              "RelativeToolTip": "Repository\\DBContext\\ADNDBContext.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBUAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:22:53.11Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "TestPerson.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Entity\\TestPerson.cs",
-              "RelativeDocumentMoniker": "Repository\\Entity\\TestPerson.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Entity\\TestPerson.cs",
-              "RelativeToolTip": "Repository\\Entity\\TestPerson.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:20:12.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "20250708074911_updateDB.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Migrations\\20250708074911_updateDB.cs",
-              "RelativeDocumentMoniker": "Repository\\Migrations\\20250708074911_updateDB.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Migrations\\20250708074911_updateDB.cs",
-              "RelativeToolTip": "Repository\\Migrations\\20250708074911_updateDB.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:07:33.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "20250710191620_updateAppointment.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Migrations\\20250710191620_updateAppointment.cs",
-              "RelativeDocumentMoniker": "Repository\\Migrations\\20250710191620_updateAppointment.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Migrations\\20250710191620_updateAppointment.cs",
-              "RelativeToolTip": "Repository\\Migrations\\20250710191620_updateAppointment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:07:35.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "TestResultService.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\TestResultService.cs",
-              "RelativeDocumentMoniker": "Service\\TestResultService.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\TestResultService.cs",
-              "RelativeToolTip": "Service\\TestResultService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T08:00:19.233Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "20250712052245_updateService.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Migrations\\20250712052245_updateService.cs",
-              "RelativeDocumentMoniker": "Repository\\Migrations\\20250712052245_updateService.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Migrations\\20250712052245_updateService.cs",
-              "RelativeToolTip": "Repository\\Migrations\\20250712052245_updateService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:22:45.635Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "TestPersonRepository.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\TestPersonRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repository\\TestPersonRepository.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\TestPersonRepository.cs",
-              "RelativeToolTip": "Repository\\Repository\\TestPersonRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T07:59:43.405Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "SampleRepository.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\SampleRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repository\\SampleRepository.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\SampleRepository.cs",
-              "RelativeToolTip": "Repository\\Repository\\SampleRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T07:59:41.482Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "AddressController.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\AddressController.cs",
-              "RelativeDocumentMoniker": "ADN_Group2\\Controllers\\AddressController.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\AddressController.cs",
-              "RelativeToolTip": "ADN_Group2\\Controllers\\AddressController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:28:40.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "ServiceReadDTO.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\DTOs\\ServiceReadDTO.cs",
-              "RelativeDocumentMoniker": "Service\\DTOs\\ServiceReadDTO.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\DTOs\\ServiceReadDTO.cs",
-              "RelativeToolTip": "Service\\DTOs\\ServiceReadDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:21:15.372Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "ServiceCreateUpdateDTO.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\DTOs\\ServiceCreateUpdateDTO.cs",
-              "RelativeDocumentMoniker": "Service\\DTOs\\ServiceCreateUpdateDTO.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\DTOs\\ServiceCreateUpdateDTO.cs",
-              "RelativeToolTip": "Service\\DTOs\\ServiceCreateUpdateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:20:48.088Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Service.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Entity\\Service.cs",
-              "RelativeDocumentMoniker": "Repository\\Entity\\Service.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Entity\\Service.cs",
-              "RelativeToolTip": "Repository\\Entity\\Service.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:20:13.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "ADN_Group2\\Controllers\\AuthController.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\ADN_Group2\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "ADN_Group2\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAIwBwAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:09:02.092Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Entity\\Identity\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "Repository\\Entity\\Identity\\ApplicationUser.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Entity\\Identity\\ApplicationUser.cs",
-              "RelativeToolTip": "Repository\\Entity\\Identity\\ApplicationUser.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:02:55.036Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repository\\UserRepository.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository\\UserRepository.cs",
-              "RelativeToolTip": "Repository\\Repository\\UserRepository.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwBsAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T04:54:41.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\Auth\\AuthService.cs",
-              "RelativeDocumentMoniker": "Service\\Auth\\AuthService.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\Auth\\AuthService.cs",
-              "RelativeToolTip": "Service\\Auth\\AuthService.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAkwGQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T04:54:13.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "UserCreateUpdateDTO.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\DTOs\\UserCreateUpdateDTO.cs",
-              "RelativeDocumentMoniker": "Service\\DTOs\\UserCreateUpdateDTO.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\DTOs\\UserCreateUpdateDTO.cs",
-              "RelativeToolTip": "Service\\DTOs\\UserCreateUpdateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T04:53:36.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "UserReadDTO.cs",
-              "DocumentMoniker": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\DTOs\\UserReadDTO.cs",
-              "RelativeDocumentMoniker": "Service\\DTOs\\UserReadDTO.cs",
-              "ToolTip": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Service\\DTOs\\UserReadDTO.cs",
-              "RelativeToolTip": "Service\\DTOs\\UserReadDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T04:53:14.285Z",
-              "EditorCaption": ""
             }
           ]
         }

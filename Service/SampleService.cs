@@ -2,16 +2,19 @@
 using Repository.Repository;
 using Service.DTOs;
 using Service.Interface;
+using System.Linq;
 
 namespace Service
 {
     public class SampleService : ISampleService
     {
         private readonly ISampleRepository _repo;
+        private readonly IAppointmentRepository _appointmentRepo;
 
-        public SampleService(ISampleRepository repo)
+        public SampleService(ISampleRepository repo, IAppointmentRepository appointmentRepo)
         {
             _repo = repo;
+            _appointmentRepo = appointmentRepo;
         }
 
         public async Task<IEnumerable<SampleReadDTO>> GetAllAsync()
@@ -62,6 +65,54 @@ namespace Service
             _repo.Delete(entity);
             await _repo.SaveAsync();
             return true;
+        }
+
+        public async Task CollectSamplesAsync(SampleCollectDTO dto)
+        {
+            // Lấy danh sách sample
+            var samples = await _repo.GetByIdsAsync(dto.SampleIds);
+            foreach (var sample in samples)
+            {
+                sample.CollectedDate = DateTime.UtcNow;
+                _repo.Update(sample);
+            }
+            await _repo.SaveAsync();
+
+            // Cập nhật trạng thái Appointment sang Collected
+            var appointment = await _appointmentRepo.GetByIdAsync(dto.AppointmentId);
+            if (appointment != null)
+            {
+                appointment.Status = "Collected";
+                _appointmentRepo.Update(appointment);
+                await _appointmentRepo.SaveAsync();
+            }
+        }
+
+        public async Task ReceiveSamplesAsync(SampleReceiveDTO dto)
+        {
+            var samples = await _repo.GetByIdsAsync(dto.SampleIds);
+            foreach (var sample in samples)
+            {
+                sample.ReceivedDate = DateTime.UtcNow;
+                _repo.Update(sample);
+            }
+            await _repo.SaveAsync();
+
+            // Cập nhật trạng thái Appointment sang InProgress
+            if (samples.Count > 0)
+            {
+                var kit = samples[0].Kit;
+                if (kit != null)
+                {
+                    var appointment = await _appointmentRepo.GetByIdAsync(kit.AppointmentId);
+                    if (appointment != null)
+                    {
+                        appointment.Status = "InProgress";
+                        _appointmentRepo.Update(appointment);
+                        await _appointmentRepo.SaveAsync();
+                    }
+                }
+            }
         }
 
 

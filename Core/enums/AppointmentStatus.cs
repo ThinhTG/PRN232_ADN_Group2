@@ -6,5 +6,6 @@
         WaitingToCollect,
         InProgress,
         Completed,
-    }
+		Collected
+	}
 }
