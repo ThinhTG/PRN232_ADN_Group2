@@ -18,7 +18,7 @@ namespace ADN_Group2.Controllers
         /// 
         /// </summary>
         /// <param name="isHomeKit"> nếu là null thì sẽ lấy tất cả</param>
-        /// <param name="status"> --: Lấy tất cả,  1: Pending,   2:WaitingToCollect,  3:InProgress,    4: Completed, 5: Collected </param>
+        /// <param name="status"> --: Lấy tất cả,  0: Pending,   1:WaitingToCollect,  2:InProgress,    3: Completed, 4: Collected </param>
         /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> 
