@@ -11,5 +11,6 @@ namespace Service.Interface
         Task CheckStatusAsync(string orderCode);
         Task<PaymentReadDTO> GetByIdAsync(object id);
         Task<bool> DeleteAsync(object id);
+        Task<IEnumerable<PaymentReadDTO>> GetPaymentByUserIdAsync(Guid userId);
     }
 } 

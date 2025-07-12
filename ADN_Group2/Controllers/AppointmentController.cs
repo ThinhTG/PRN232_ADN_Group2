@@ -1,9 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Service.DTOs;
 using Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ADN_Group2.Controllers
 {
@@ -23,7 +20,12 @@ namespace ADN_Group2.Controllers
             var appointments = await _service.GetAllAsync();
             return Ok(appointments);
         }
-
+        [HttpGet("appointment-of-user")]
+        public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> GetAppointmentByUserIdAsync(Guid userId)
+        {
+            var appointments = await _service.GetAppointmentByUserIdAsync(userId);
+            return Ok(appointments);
+        }
         [HttpGet("{id}")]
         public async Task<ActionResult<AppointmentReadDTO>> GetById(Guid id)
         {

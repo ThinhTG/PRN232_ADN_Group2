@@ -26,6 +26,12 @@ namespace ADN_Group2.Controllers
             if (entity == null) return NotFound();
             return entity;
         }
+        [HttpGet("payments-of-users/{userId}")]
+        public async Task<IEnumerable<PaymentReadDTO>> GetPaymentByUserIdAsync(Guid userId)
+        {
+            var entity = await _service.GetPaymentByUserIdAsync(userId);
+            return entity;
+        }
 
         [HttpPost("create-link")]
         public async Task<ActionResult<CreatePaymentResult>> Create(PaymentResponse model)

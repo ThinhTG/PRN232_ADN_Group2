@@ -69,7 +69,6 @@ namespace Service
                 OrderCode = orderCode,
                 AppointmentId = Guid.Parse(request.AppointmentId),
                 Amount = request.Price,
-                PaidDate = DateTime.UtcNow,
                 Status = PaymentStatus.Pending.ToString(),
             };
             await _repo.AddAsync(payment);
@@ -100,7 +99,8 @@ namespace Service
             if (checking.status == "PAID")
             {
                 payment.Status = PaymentStatus.Completed.ToString();
-                 _repo.Update(payment);
+                payment.PaidDate = DateTime.UtcNow;
+                _repo.Update(payment);
                 await _repo.SaveAsync();
                 var appointment = await _appointmentRepo.GetByIdAsync(payment.AppointmentId);
                 appointment.Status = AppointmentStatus.Confirmed.ToString();
@@ -114,5 +114,10 @@ namespace Service
 
         }
 
+        public async Task<IEnumerable<PaymentReadDTO>> GetPaymentByUserIdAsync(Guid userId)
+        {
+            var payments = await _repo.GetByUserIdAsync(userId);
+            return payments.Select(MapToReadDTO);
+        }
     }
 } 
