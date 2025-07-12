@@ -19,8 +19,8 @@ namespace Repository.DBContext
 		public ADNDbContext(DbContextOptions<ADNDbContext> options)
 			: base(options)
 		{
-
-		}
+			this.Database.Migrate();
+        }
 		// user
 		public virtual DbSet<ApplicationUser> ApplicationUsers => Set<ApplicationUser>();
 		public virtual DbSet<ApplicationRole> ApplicationRoles => Set<ApplicationRole>();

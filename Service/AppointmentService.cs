@@ -101,5 +101,19 @@ namespace Service
             await _repo.SaveAsync();
             return true;
         }
+
+        public async Task<IEnumerable<AppointmentReadDTO>> GetAppointmentByUserIdAsync(Guid userId)
+        {
+            var appointments = await _repo.GetByUserIdAsync(userId);
+            return appointments.Select(a => new AppointmentReadDTO
+            {
+                AppointmentId = a.AppointmentId,
+                UserId = a.UserId,
+                ServiceId = a.ServiceId,
+                ScheduleDate = a.ScheduleDate,
+                Status = a.Status,
+                BookingDate = a.BookingDate
+            });
+        }
     }
 } 

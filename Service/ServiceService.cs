@@ -23,6 +23,7 @@ namespace Service
                 AllowHomeKit = dto.AllowHomeKit,
                 Price = dto.Price,
                 Type = dto.Type,
+                Url = dto.Url,
                 CreatedAt = DateTime.UtcNow
             };
 
@@ -31,6 +32,7 @@ namespace Service
 
             return new ServiceReadDTO
             {
+                Url = entity.Url,
                 ServiceId = entity.ServiceId,
                 Name = entity.Name,
                 Description = entity.Description,
@@ -51,6 +53,7 @@ namespace Service
                 Description = s.Description,
                 AllowHomeKit = s.AllowHomeKit,
                 Price = s.Price,
+                Url = s.Url,
                 Type = s.Type,
                 CreatedAt = s.CreatedAt
             });
@@ -66,6 +69,7 @@ namespace Service
                 Description = s.Description,
                 AllowHomeKit = s.AllowHomeKit,
                 Price = s.Price,
+                Url = s.Url,
                 Type = s.Type,
                 CreatedAt = s.CreatedAt
             };

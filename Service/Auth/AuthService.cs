@@ -1,8 +1,11 @@
 using ADN_Group2.BusinessObject.Identity;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Repository.Entity;
 using Repository.Repository;
+using Service.DTOs;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -90,5 +93,63 @@ namespace Service.Auth
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+        public async Task<UserReadDTO> GetUserById(Guid? id)
+        {
+            if(id == null)
+            {
+                id = Guid.Parse(GetUserId());
+            }
+            var user = _userRepository.FindByIdAsync(id).Result;
+            if (user == null) return null;
+            return new UserReadDTO
+            {
+                 Id = user.Id,
+                Email = user.Email,
+                FullName = user.FullName,
+                Role = _userRepository.GetRolesAsync(user).Result.FirstOrDefault(),
+                Addresses = GetUserAddressAsync(user.Addresses).ToList(),
+            };
+        }
+        public  IEnumerable<AddressReadDTO> GetUserAddressAsync(ICollection<Address> addresses)
+        {
+            return addresses.Select(a => new AddressReadDTO
+            {
+                AddressId = a.AddressId,
+                Number = a.Number,
+                District = a.District,
+                Province = a.Province,
+                UserId = a.UserId
+            });
+        }
+        public async Task<IdentityResult> UpdateUserAsync(Guid? userId, UserCreateUpdateDTO dto)
+        {
+            if (userId == null)
+            {
+                userId = Guid.Parse(GetUserId());
+            }
+            var user = await _userRepository.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return IdentityResult.Failed(new IdentityError
+                {
+                    Code = "UserNotFound",
+                    Description = "User not found"
+                });
+            }
+
+            if (!string.IsNullOrWhiteSpace(dto.FullName))
+                user.FullName = dto.FullName;
+
+            if (!string.IsNullOrWhiteSpace(dto.AvatarUrl))
+                user.AvatarUrl = dto.AvatarUrl;
+
+            if (!string.IsNullOrWhiteSpace(dto.Gender))
+                user.Gender = dto.Gender;
+
+            user.LastUpdatedTime = DateTimeOffset.UtcNow;
+
+            return await _userRepository.UpdateUserAsync(user);
+        }
+
     }
 } 

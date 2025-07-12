@@ -8,6 +8,6 @@ namespace Service.DTOs
         public Guid AppointmentId { get; set; }
         public decimal Amount { get; set; }
         public string Status { get; set; }
-        public DateTime PaidDate { get; set; }
+        public DateTime? PaidDate { get; set; }
     }
 } 

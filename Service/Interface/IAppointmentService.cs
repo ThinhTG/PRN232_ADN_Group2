@@ -12,5 +12,6 @@ namespace Service.Interface
         Task<AppointmentReadDTO> AddAsync(AppointmentCreateUpdateDTO entity);
         Task<bool> UpdateAsync(Guid id, AppointmentCreateUpdateDTO entity);
         Task<bool> DeleteAsync(Guid id);
+        Task<IEnumerable<AppointmentReadDTO>> GetAppointmentByUserIdAsync(Guid userId);
     }
 } 
