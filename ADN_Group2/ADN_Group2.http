@@ -4,3 +4,52 @@ GET {{ADN_Group2_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+# Feedback API Tests
+GET {{ADN_Group2_HostAddress}}/api/Feedback
+Accept: application/json
+
+###
+
+GET {{ADN_Group2_HostAddress}}/api/Feedback/{id}
+Accept: application/json
+
+###
+
+POST {{ADN_Group2_HostAddress}}/api/Feedback
+Content-Type: application/json
+
+{
+  "userId": "00000000-0000-0000-0000-000000000001",
+  "comment": "Great service! Very professional.",
+  "rating": 5,
+  "appointmentId": "00000000-0000-0000-0000-000000000001"
+}
+
+###
+
+PUT {{ADN_Group2_HostAddress}}/api/Feedback/{id}
+Content-Type: application/json
+
+{
+  "userId": "00000000-0000-0000-0000-000000000001",
+  "comment": "Updated comment - Excellent service!",
+  "rating": 4,
+  "appointmentId": "00000000-0000-0000-0000-000000000001"
+}
+
+###
+
+DELETE {{ADN_Group2_HostAddress}}/api/Feedback/{id}
+
+###
+
+GET {{ADN_Group2_HostAddress}}/api/Feedback/service/{serviceId}
+Accept: application/json
+
+###
+
+GET {{ADN_Group2_HostAddress}}/api/Feedback/user/{userId}
+Accept: application/json
+
+###

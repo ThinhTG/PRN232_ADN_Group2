@@ -16,5 +16,6 @@ namespace Repository.Entity
         public ICollection<Payment> Payments { get; set; }
         public ICollection<TestResult> TestResults { get; set; }
         public ICollection<Kit> Kits { get; set; }
+        public ICollection<Feedback> Feedbacks { get; set; }
     }
 } 
