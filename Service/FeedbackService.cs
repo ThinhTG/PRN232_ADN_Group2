@@ -48,18 +48,38 @@ namespace Service
 
         public async Task<FeedbackReadDTO> AddAsync(FeedbackCreateUpdateDTO dto)
         {
-            // Kiểm tra điều kiện feedback
-            var appointment = await _appointmentRepo.GetByIdAsync(dto.AppointmentId);
-            if (appointment == null || appointment.UserId != dto.UserId ||  appointment.Status != "Completed")
+            // Validate rating
+            if (dto.Rating < 1 || dto.Rating > 5)
             {
-                throw new InvalidOperationException("Bạn chỉ có thể feedback sau khi hoàn thành dịch vụ này.");
+                throw new ArgumentException("Rating must be between 1 and 5");
             }
-            // Kiểm tra trùng lặp feedback cho appointment này
+
+            // Check if appointment exists
+            var appointment = await _appointmentRepo.GetByIdAsync(dto.AppointmentId);
+            if (appointment == null)
+            {
+                throw new InvalidOperationException("Appointment not found with this ID.");
+            }
+
+            // Check if user has permission to feedback for this appointment
+            if (appointment.UserId != dto.UserId)
+            {
+                throw new InvalidOperationException("You can only provide feedback for your own appointments.");
+            }
+
+            // Check if appointment is completed
+            if (appointment.Status != "Completed")
+            {
+                throw new InvalidOperationException("You can only provide feedback after completing this service.");
+            }
+
+            // Check for duplicate feedback for this appointment
             var existingFeedbacks = await _repo.GetAllAsync();
             if (existingFeedbacks.Any(f => f.AppointmentId == dto.AppointmentId && f.UserId == dto.UserId))
             {
-                throw new InvalidOperationException("Bạn đã feedback cho lần đặt lịch này rồi.");
+                throw new InvalidOperationException("You have already provided feedback for this appointment.");
             }
+
             var feedback = new Feedback
             {
                 FeedbackId = Guid.NewGuid(),
@@ -79,7 +99,8 @@ namespace Service
                 UserId = feedback.UserId,
                 Comment = feedback.Comment,
                 Rating = feedback.Rating,
-                ServiceId = feedback.ServiceId
+                ServiceId = feedback.ServiceId,
+                AppointmentId = feedback.AppointmentId
             };
         }
 
@@ -105,6 +126,36 @@ namespace Service
             _repo.Delete(entity);
             await _repo.SaveAsync();
             return true;
+        }
+
+        public async Task<IEnumerable<FeedbackReadDTO>> GetByServiceIdAsync(Guid serviceId)
+        {
+            var feedbacks = await _repo.GetAllAsync();
+            return feedbacks.Where(f => f.ServiceId == serviceId)
+                           .Select(f => new FeedbackReadDTO
+                           {
+                               FeedbackId = f.FeedbackId,
+                               UserId = f.UserId,
+                               Comment = f.Comment,
+                               Rating = f.Rating,
+                               ServiceId = f.ServiceId,
+                               AppointmentId = f.AppointmentId
+                           });
+        }
+
+        public async Task<IEnumerable<FeedbackReadDTO>> GetByUserIdAsync(Guid userId)
+        {
+            var feedbacks = await _repo.GetAllAsync();
+            return feedbacks.Where(f => f.UserId == userId)
+                           .Select(f => new FeedbackReadDTO
+                           {
+                               FeedbackId = f.FeedbackId,
+                               UserId = f.UserId,
+                               Comment = f.Comment,
+                               Rating = f.Rating,
+                               ServiceId = f.ServiceId,
+                               AppointmentId = f.AppointmentId
+                           });
         }
     }
 } 

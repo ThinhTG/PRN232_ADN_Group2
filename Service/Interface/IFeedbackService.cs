@@ -13,5 +13,7 @@ namespace Service.Interface
         Task<FeedbackReadDTO> AddAsync(FeedbackCreateUpdateDTO entity);
         Task<bool> UpdateAsync(Guid id, FeedbackCreateUpdateDTO entity);
         Task<bool> DeleteAsync(Guid id);
+        Task<IEnumerable<FeedbackReadDTO>> GetByServiceIdAsync(Guid serviceId);
+        Task<IEnumerable<FeedbackReadDTO>> GetByUserIdAsync(Guid userId);
     }
 } 
