@@ -35,8 +35,15 @@ namespace ADN_Group2.Controllers
         [HttpPost]
         public async Task<ActionResult<FeedbackReadDTO>> Create(FeedbackCreateUpdateDTO dto)
         {
-            var created = await _service.AddAsync(dto);
-            return CreatedAtAction(nameof(GetById), new { id = created.FeedbackId }, created);
+            try
+            {
+                var created = await _service.AddAsync(dto);
+                return CreatedAtAction(nameof(GetById), new { id = created.FeedbackId }, created);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpPut("{id}")]

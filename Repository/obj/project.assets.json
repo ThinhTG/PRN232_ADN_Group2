@@ -4663,24 +4663,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\thinh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository.csproj",
+      "projectUniqueName": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\Repository.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Repository\\obj\\",
+      "projectPath": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Repository\\Repository.csproj",
+      "packagesPath": "C:\\Users\\thinh\\.nuget\\packages\\",
+      "outputPath": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Repository\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\thinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4688,15 +4683,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\Admin\\.nuget\\packages": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "D:\\LocalPakage": {},
+        "D:\\PRN_WPF\\PRN212_FA24_PE_TranGiaThinh\\Candidate_BusinessObjects\\bin": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Core\\Core.csproj": {
-              "projectPath": "F:\\HocTap\\PRN333\\Project\\PRN232_ADN_Group2\\Core\\Core.csproj"
+            "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Core\\Core.csproj": {
+              "projectPath": "D:\\Ky8\\PRN232\\PJ\\PRN232_ADN_Group2\\Core\\Core.csproj"
             }
           }
         }
@@ -4710,8 +4707,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -4770,7 +4766,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -12,9 +12,11 @@ namespace Service
     public class FeedbackService : IFeedbackService
     {
         private readonly IFeedbackRepository _repo;
-        public FeedbackService(IFeedbackRepository repo)
+        private readonly IAppointmentRepository _appointmentRepo; // Added this line
+        public FeedbackService(IFeedbackRepository repo, IAppointmentRepository appointmentRepo) // Modified constructor
         {
             _repo = repo;
+            _appointmentRepo = appointmentRepo; // Initialize new field
         }
 
         public async Task<IEnumerable<FeedbackReadDTO>> GetAllAsync()
@@ -46,13 +48,26 @@ namespace Service
 
         public async Task<FeedbackReadDTO> AddAsync(FeedbackCreateUpdateDTO dto)
         {
+            // Kiểm tra điều kiện feedback
+            var appointment = await _appointmentRepo.GetByIdAsync(dto.AppointmentId);
+            if (appointment == null || appointment.UserId != dto.UserId ||  appointment.Status != "Completed")
+            {
+                throw new InvalidOperationException("Bạn chỉ có thể feedback sau khi hoàn thành dịch vụ này.");
+            }
+            // Kiểm tra trùng lặp feedback cho appointment này
+            var existingFeedbacks = await _repo.GetAllAsync();
+            if (existingFeedbacks.Any(f => f.AppointmentId == dto.AppointmentId && f.UserId == dto.UserId))
+            {
+                throw new InvalidOperationException("Bạn đã feedback cho lần đặt lịch này rồi.");
+            }
             var feedback = new Feedback
             {
                 FeedbackId = Guid.NewGuid(),
                 UserId = dto.UserId,
                 Comment = dto.Comment,
                 Rating = dto.Rating,
-                ServiceId = dto.ServiceId
+                AppointmentId = dto.AppointmentId,
+                ServiceId = appointment.ServiceId // Lấy từ appointment
             };
 
             await _repo.AddAsync(feedback);
@@ -76,7 +91,7 @@ namespace Service
             feedback.UserId = dto.UserId;
             feedback.Comment = dto.Comment;
             feedback.Rating = dto.Rating;
-            feedback.ServiceId = dto.ServiceId;
+            feedback.AppointmentId = dto.AppointmentId;
 
             _repo.Update(feedback);
             await _repo.SaveAsync();
