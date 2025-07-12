@@ -14,14 +14,20 @@ namespace Service
     {
         private readonly IPaymentRepository _repo;
         private readonly PayOS _payOS;
+        private readonly IKitRepository _kitRepository;
+        private readonly ISampleRepository _sampleRepository;
         private readonly AuthService _authService;
+        private readonly ITestPersonRepository _testPersonRepository;
         private readonly IAppointmentRepository _appointmentRepo;
-        public PaymentService(IPaymentRepository repo, AuthService authService, PayOS payOS, IAppointmentRepository appointmentRepo)
+        public PaymentService(IPaymentRepository repo, AuthService authService, PayOS payOS, IAppointmentRepository appointmentRepo, ISampleRepository sampleRepository, IKitRepository kitRepository, ITestPersonRepository testPersonRepository)
         {
             _repo = repo;
             _authService = authService;
             _payOS = payOS;
             _appointmentRepo = appointmentRepo;
+            _sampleRepository = sampleRepository;
+            _kitRepository = kitRepository;
+            _testPersonRepository = testPersonRepository;
         }
 
         public async Task<IEnumerable<PaymentReadDTO>> GetAllAsync()
@@ -48,7 +54,7 @@ namespace Service
                 PaidDate = entity.PaidDate
             };
         }
-    
+
         public async Task<bool> DeleteAsync(object id)
         {
             var entity = await _repo.GetByIdAsync(id);
@@ -62,7 +68,7 @@ namespace Service
         {
             int orderCode = int.Parse(DateTimeOffset.Now.ToString("ffffff"));
             string accountId = _authService.GetUserId();
-            var account =  await _repo.GetByIdAsync(Guid.Parse(accountId));
+            var account = await _repo.GetByIdAsync(Guid.Parse(accountId));
             Payment payment = new Payment
             {
                 PaymentId = Guid.NewGuid(),
@@ -77,7 +83,7 @@ namespace Service
             var descriptions = request.Description = $"Booking {request.Price}";
             List<ItemData> items = new List<ItemData> { item };
             var expiredAt = DateTimeOffset.UtcNow.AddMinutes(15).ToUnixTimeSeconds();
-            PaymentData paymentDataPayment = new PaymentData(orderCode, request.Price, descriptions, items, request.CancelUrl, request.ReturnUrl, null, null, null, null, null,expiredAt);
+            PaymentData paymentDataPayment = new PaymentData(orderCode, request.Price, descriptions, items, request.CancelUrl, request.ReturnUrl, null, null, null, null, null, expiredAt);
             try
             {
                 var createdLink = await _payOS.createPaymentLink(paymentDataPayment);
@@ -106,6 +112,12 @@ namespace Service
                 appointment.Status = AppointmentStatus.WaitingToCollect.ToString();
                 _appointmentRepo.Update(appointment);
                 await _appointmentRepo.SaveAsync();
+                Kit kit = await AddKitAsync(appointment.AppointmentId, long.Parse(orderCode));
+                List<Guid> list = await _testPersonRepository.GetTestPersonIdByAppointment(appointment.AppointmentId);
+                foreach (var item in list)
+                {
+                  await  AddSampleAsync(kit.KitId, item, appointment.BookingDate);
+                }
             }
             else
             {
@@ -113,11 +125,39 @@ namespace Service
             }
 
         }
+        public async Task<Kit> AddKitAsync(Guid appointmentId, long trackingNumber)
+        {
+            var kit = new Kit
+            {
+                KitId = Guid.NewGuid(),
+                AppointmentId = appointmentId,
+                TrackingNumber = trackingNumber,
+                SentDate = DateTime.UtcNow
+            };
 
+            await _kitRepository.AddAsync(kit);
+            await _kitRepository.SaveAsync();
+            return kit;
+        }
+        public async Task AddSampleAsync(Guid kidId, Guid personId, DateTime appointmentDate)
+        {
+            var entity = new Sample
+            {
+                SampleId = Guid.NewGuid(),
+                KitId = kidId,
+                CollectedDate = appointmentDate,
+                ReceivedDate = appointmentDate,
+                PersonId = personId
+            };
+
+            await _sampleRepository.AddAsync(entity);
+            await _sampleRepository.SaveAsync();
+
+        }
         public async Task<IEnumerable<PaymentReadDTO>> GetPaymentByUserIdAsync(Guid userId)
         {
             var payments = await _repo.GetByUserIdAsync(userId);
             return payments.Select(MapToReadDTO);
         }
     }
-} 
+}
