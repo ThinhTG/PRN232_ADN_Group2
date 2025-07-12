@@ -105,7 +105,9 @@ namespace Service.Auth
             {
                  Id = user.Id,
                 Email = user.Email,
+                AvatarUrl = user.AvatarUrl,
                 FullName = user.FullName,
+                Gender = user.Gender,
                 Role = _userRepository.GetRolesAsync(user).Result.FirstOrDefault(),
                 Addresses = GetUserAddressAsync(user.Addresses).ToList(),
             };
