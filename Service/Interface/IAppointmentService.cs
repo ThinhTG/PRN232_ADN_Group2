@@ -1,3 +1,4 @@
+using Core.enums;
 using Service.DTOs;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ namespace Service.Interface
 {
     public interface IAppointmentService
     {
-        Task<IEnumerable<AppointmentReadDTO>> GetAllAsync();
+        Task<IEnumerable<AppointmentReadDTO>> GetAllAsync(bool? isHomeKit, AppointmentStatus? status);
         Task<AppointmentReadDTO> GetByIdAsync(Guid id);
         Task<AppointmentReadDTO> AddAsync(AppointmentCreateUpdateDTO entity);
         Task<bool> UpdateAsync(Guid id, AppointmentCreateUpdateDTO entity);

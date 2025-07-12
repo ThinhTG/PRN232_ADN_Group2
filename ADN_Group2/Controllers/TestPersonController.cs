@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Repository.Entity;
 using Service.DTOs;
 using Service.Interface;
+using System.Collections.Generic;
 
 namespace ADN_Group2.Controllers
 {
@@ -27,10 +28,10 @@ namespace ADN_Group2.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<TestPersonReadDTO>> Create(TestPersonCreateUpdateDTO entity)
+        public async Task<ActionResult<List<TestPersonReadDTO>>> Create(List<TestPersonCreateUpdateDTO> entity)
         {
             var created = await _service.AddAsync(entity);
-            return CreatedAtAction(nameof(GetById), new { id = created.PersonId }, created);
+            return Ok(created);
         }
 
         [HttpPut("{id}")]

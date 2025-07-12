@@ -103,7 +103,7 @@ namespace Service
                 _repo.Update(payment);
                 await _repo.SaveAsync();
                 var appointment = await _appointmentRepo.GetByIdAsync(payment.AppointmentId);
-                appointment.Status = AppointmentStatus.Confirmed.ToString();
+                appointment.Status = AppointmentStatus.WaitingToCollect.ToString();
                 _appointmentRepo.Update(appointment);
                 await _appointmentRepo.SaveAsync();
             }

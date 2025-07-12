@@ -26,13 +26,18 @@ namespace Service
             return entity == null ? null : MapToReadDTO(entity);
         }
 
-        public async Task<TestPersonReadDTO> AddAsync(TestPersonCreateUpdateDTO dto)
+        public async Task<List<TestPersonReadDTO>> AddAsync(List<TestPersonCreateUpdateDTO> dto)
         {
-            var entity = MapToEntity(dto);
-            entity.PersonId = Guid.NewGuid(); // tự tạo ID
-            await _repo.AddAsync(entity);
+            List<TestPersonReadDTO>  listResponse= new();
+            foreach(var item in dto)
+            {
+                var entity = MapToEntity(item);
+                entity.PersonId = Guid.NewGuid(); // tự tạo ID
+                listResponse.Add(MapToReadDTO(entity));
+                await _repo.AddAsync(entity);
+            } 
             await _repo.SaveAsync();
-            return MapToReadDTO(entity);
+            return listResponse;
         }
 
         public async Task<TestPersonReadDTO> UpdateAsync(Guid id,TestPersonCreateUpdateDTO dto)

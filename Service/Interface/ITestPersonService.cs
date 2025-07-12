@@ -5,7 +5,7 @@ namespace Service.Interface
     {
         Task<IEnumerable<TestPersonReadDTO>> GetAllAsync();
         Task<TestPersonReadDTO> GetByIdAsync(object id);
-        Task<TestPersonReadDTO> AddAsync(TestPersonCreateUpdateDTO entity);
+        Task<List<TestPersonReadDTO>> AddAsync(List<TestPersonCreateUpdateDTO> entity);
         Task<TestPersonReadDTO> UpdateAsync(Guid id,TestPersonCreateUpdateDTO entity);
         Task<bool> DeleteAsync(object id);
     }

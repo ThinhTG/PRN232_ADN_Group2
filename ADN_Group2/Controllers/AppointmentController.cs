@@ -1,3 +1,4 @@
+﻿using Core.enums;
 using Microsoft.AspNetCore.Mvc;
 using Service.DTOs;
 using Service.Interface;
@@ -13,11 +14,17 @@ namespace ADN_Group2.Controllers
         {
             _service = service;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="isHomeKit"> nếu là null thì sẽ lấy tất cả</param>
+        /// <param name="status"> --: Lấy tất cả,  1: Pending,   2:WaitingToCollect,   3:InProgress,    4: Completed </param>
+        /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> GetAll()
+        public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> 
+            GetAll(bool? isHomeKit,AppointmentStatus? status)
         {
-            var appointments = await _service.GetAllAsync();
+            var appointments = await _service.GetAllAsync(isHomeKit, status);
             return Ok(appointments);
         }
         [HttpGet("appointment-of-user")]

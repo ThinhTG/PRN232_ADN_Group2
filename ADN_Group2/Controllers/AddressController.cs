@@ -1,9 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Service.DTOs;
 using Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ADN_Group2.Controllers
 {

@@ -9,6 +9,7 @@ namespace Service.DTOs
         public Guid ServiceId { get; set; }
         public DateTime ScheduleDate { get; set; }
         public string Status { get; set; }
+        public bool IsHomeKit { get; set; }
         public DateTime BookingDate { get; set; }
         public decimal TotalPrice { get; set; } // Assuming TotalPrice is part of the appointment details
     }

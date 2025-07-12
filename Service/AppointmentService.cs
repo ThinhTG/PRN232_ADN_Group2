@@ -21,16 +21,18 @@ namespace Service
             _authService = authService;
         }
 
-        public async Task<IEnumerable<AppointmentReadDTO>> GetAllAsync()
+        public async Task<IEnumerable<AppointmentReadDTO>> GetAllAsync(bool? isHomeKit, AppointmentStatus? status)
         {
-            var appointments = await _repo.GetAllAsync();
+            var appointments = await _repo.GetAllAppointment(isHomeKit, status);
             return appointments.Select(a => new AppointmentReadDTO
             {
                 AppointmentId = a.AppointmentId,
                 UserId = a.UserId,
                 ServiceId = a.ServiceId,
                 ScheduleDate = a.ScheduleDate,
+                IsHomeKit = a.IsHomeKit,
                 Status = a.Status,
+                TotalPrice = a.Service != null ? a.Service.Price : 0,
                 BookingDate = a.BookingDate
             });
         }
@@ -44,8 +46,10 @@ namespace Service
                 AppointmentId = a.AppointmentId,
                 UserId = a.UserId,
                 ServiceId = a.ServiceId,
+                IsHomeKit = a.IsHomeKit,
                 ScheduleDate = a.ScheduleDate,
                 Status = a.Status,
+                TotalPrice = a.Service != null ? a.Service.Price : 0,
                 BookingDate = a.BookingDate
             };
         }
@@ -73,6 +77,7 @@ namespace Service
                 UserId = appointment.UserId,
                 ServiceId = appointment.ServiceId,
                 ScheduleDate = appointment.ScheduleDate,
+                IsHomeKit = appointment.IsHomeKit,
                 Status = appointment.Status,
                 BookingDate = appointment.BookingDate,
                 TotalPrice = sv.Price
@@ -112,6 +117,8 @@ namespace Service
                 ServiceId = a.ServiceId,
                 ScheduleDate = a.ScheduleDate,
                 Status = a.Status,
+                IsHomeKit = a.IsHomeKit,
+                TotalPrice = a.Service != null ? a.Service.Price : 0,
                 BookingDate = a.BookingDate
             });
         }
