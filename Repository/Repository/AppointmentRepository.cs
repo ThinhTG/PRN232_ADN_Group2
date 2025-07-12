@@ -13,5 +13,12 @@ namespace Repository.Repository
             return  _context.Appointments
                 .Where(p => p.UserId == userId);
         }
+
+        public async Task<IEnumerable<Appointment>> GetByStatusAsync(string status)
+        {
+            return await _context.Appointments
+                .Where(p => p.Status == status)
+                .ToListAsync();
+        }
     }
 } 
