@@ -138,6 +138,10 @@ namespace Repository.DBContext
 					  .WithMany(s => s.Feedbacks)
 					  .HasForeignKey(f => f.ServiceId)
 					  .OnDelete(DeleteBehavior.Cascade);
+				entity.HasOne(f => f.Appointment)
+					  .WithMany(a => a.Feedbacks)
+					  .HasForeignKey(f => f.AppointmentId)
+					  .OnDelete(DeleteBehavior.Cascade);
 			});
 
 			// Kit

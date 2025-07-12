@@ -35,8 +35,23 @@ namespace ADN_Group2.Controllers
         [HttpPost]
         public async Task<ActionResult<FeedbackReadDTO>> Create(FeedbackCreateUpdateDTO dto)
         {
-            var created = await _service.AddAsync(dto);
-            return CreatedAtAction(nameof(GetById), new { id = created.FeedbackId }, created);
+            try
+            {
+                var created = await _service.AddAsync(dto);
+                return CreatedAtAction(nameof(GetById), new { id = created.FeedbackId }, created);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred while creating feedback." });
+            }
         }
 
         [HttpPut("{id}")]
@@ -53,6 +68,20 @@ namespace ADN_Group2.Controllers
             var deleted = await _service.DeleteAsync(id);
             if (!deleted) return NotFound();
             return NoContent();
+        }
+
+        [HttpGet("service/{serviceId}")]
+        public async Task<ActionResult<IEnumerable<FeedbackReadDTO>>> GetByServiceId(Guid serviceId)
+        {
+            var feedbacks = await _service.GetByServiceIdAsync(serviceId);
+            return Ok(feedbacks);
+        }
+
+        [HttpGet("user/{userId}")]
+        public async Task<ActionResult<IEnumerable<FeedbackReadDTO>>> GetByUserId(Guid userId)
+        {
+            var feedbacks = await _service.GetByUserIdAsync(userId);
+            return Ok(feedbacks);
         }
     }
 } 
