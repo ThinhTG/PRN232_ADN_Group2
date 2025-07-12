@@ -1,4 +1,5 @@
-﻿using Repository.Entity;
+﻿using Core.enums;
+using Repository.Entity;
 using Repository.Repository;
 using Service.DTOs;
 using Service.Interface;
@@ -22,7 +23,11 @@ namespace Service
             var entities = await _repo.GetAllAsync();
             return entities.Select(MapToReadDTO);
         }
-
+        public async Task<IEnumerable<SampleReadDTO>> GetSampleByAppointmentIdAsync(Guid appointmentId)
+        {
+            var entities = await _repo.GetByAppointmentIdAsync(appointmentId);
+            return entities.Select(MapToReadDTO);
+        }
         public async Task<SampleReadDTO> GetByIdAsync(object id)
         {
             var entity = await _repo.GetByIdAsync(id);
@@ -137,6 +142,28 @@ namespace Service
                 ReceivedDate = dto.ReceivedDate,
                 PersonId = dto.PersonId
             };
+        }
+
+        public async Task CollectOnsiteSamplesAsync(SampleCollectDTO dto)
+        {
+
+            var samples = await _repo.GetByIdsAsync(dto.SampleIds);
+            foreach (var sample in samples)
+            {
+                sample.CollectedDate = DateTime.UtcNow;
+                sample.ReceivedDate = DateTime.UtcNow;
+                _repo.Update(sample);
+            }
+            await _repo.SaveAsync();
+
+            // Cập nhật trạng thái Appointment sang InProgress
+            var appointment = await _appointmentRepo.GetByIdAsync(dto.AppointmentId);
+            if (appointment != null)
+            {
+                appointment.Status = AppointmentStatus.InProgress.ToString();
+                _appointmentRepo.Update(appointment);
+                await _appointmentRepo.SaveAsync();
+            }
         }
     }
 }

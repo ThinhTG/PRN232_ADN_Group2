@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Repository.Migrations
 {
     /// <inheritdoc />
-    public partial class updateDB : Migration
+    public partial class initialDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -74,7 +74,8 @@ namespace Repository.Migrations
                     AllowHomeKit = table.Column<bool>(type: "bit", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    Type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -253,7 +254,8 @@ namespace Repository.Migrations
                     ServiceId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ScheduleDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BookingDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    BookingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsHomeKit = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -277,25 +279,18 @@ namespace Repository.Migrations
                 columns: table => new
                 {
                     FeedbackId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Comment = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Rating = table.Column<int>(type: "int", nullable: false),
-                    ServiceId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    AppointmentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Feedbacks", x => x.FeedbackId);
                     table.ForeignKey(
-                        name: "FK_Feedbacks_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Feedbacks_Services_ServiceId",
-                        column: x => x.ServiceId,
-                        principalTable: "Services",
-                        principalColumn: "ServiceId",
+                        name: "FK_Feedbacks_Appointments_AppointmentId",
+                        column: x => x.AppointmentId,
+                        principalTable: "Appointments",
+                        principalColumn: "AppointmentId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -327,7 +322,7 @@ namespace Repository.Migrations
                     AppointmentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PaidDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PaidDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     OrderCode = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -390,7 +385,7 @@ namespace Repository.Migrations
                     SampleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     KitId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CollectedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ReceivedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ReceivedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     PersonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -470,14 +465,9 @@ namespace Repository.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Feedbacks_ServiceId",
+                name: "IX_Feedbacks_AppointmentId",
                 table: "Feedbacks",
-                column: "ServiceId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Feedbacks_UserId",
-                table: "Feedbacks",
-                column: "UserId");
+                column: "AppointmentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Kits_AppointmentId",

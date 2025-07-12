@@ -1,4 +1,5 @@
-﻿using Repository.Entity;
+﻿using Core.enums;
+using Repository.Entity;
 using Repository.Repository;
 using Service.DTOs;
 using Service.Interface;
@@ -8,9 +9,11 @@ namespace Service
     public class TestResultService : ITestResultService
     {
         private readonly ITestResultRepository _repo;
-        public TestResultService(ITestResultRepository repo)
+        private readonly IAppointmentRepository _appointmentRepo;
+        public TestResultService(ITestResultRepository repo, IAppointmentRepository appointmentRepo)
         {
             _repo = repo;
+            _appointmentRepo = appointmentRepo;
         }
 
         public async Task<IEnumerable<TestResultReadDTO>> GetAllAsync()
@@ -36,7 +39,10 @@ namespace Service
 
             await _repo.AddAsync(entity);
             await _repo.SaveAsync();
-
+            Appointment appointment = await _appointmentRepo.GetByIdAsync(dto.AppointmentId);
+            appointment.Status = AppointmentStatus.Completed.ToString();
+            await _appointmentRepo.AddAsync(appointment);
+            await _appointmentRepo.SaveAsync();
             return MapToReadDTO(entity);
         }
 
@@ -45,11 +51,10 @@ namespace Service
             // Giả định rằng DTO có chứa `ResultId` (bạn nên thêm vào class)
             var existing = await _repo.GetByIdAsync(id);
             if (existing == null) return null;
-
             existing.AppointmentId = dto.AppointmentId;
             existing.ResultDate = dto.ResultDate;
             existing.Description = dto.Description;
-
+            
             _repo.Update(existing);
             await _repo.SaveAsync();
 

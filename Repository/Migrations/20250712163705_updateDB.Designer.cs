@@ -12,7 +12,7 @@ using Repository.DBContext;
 namespace Repository.Migrations
 {
     [DbContext(typeof(ADNDbContext))]
-    [Migration("20250708074911_updateDB")]
+    [Migration("20250712163705_updateDB")]
     partial class updateDB
     {
         /// <inheritdoc />
@@ -346,6 +346,9 @@ namespace Repository.Migrations
                     b.Property<DateTime>("BookingDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsHomeKit")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("ScheduleDate")
                         .HasColumnType("datetime2");
 
@@ -403,6 +406,9 @@ namespace Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("AppointmentId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Comment")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -410,17 +416,9 @@ namespace Repository.Migrations
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("ServiceId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("FeedbackId");
 
-                    b.HasIndex("ServiceId");
-
-                    b.HasIndex("UserId");
+                    b.HasIndex("AppointmentId");
 
                     b.ToTable("Feedbacks");
                 });
@@ -433,9 +431,6 @@ namespace Repository.Migrations
 
                     b.Property<Guid>("AppointmentId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("SentDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<long>("TrackingNumber")
                         .HasColumnType("bigint");
@@ -463,7 +458,7 @@ namespace Repository.Migrations
                     b.Property<int>("OrderCode")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("PaidDate")
+                    b.Property<DateTime?>("PaidDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Status")
@@ -492,7 +487,7 @@ namespace Repository.Migrations
                     b.Property<Guid>("PersonId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("ReceivedDate")
+                    b.Property<DateTime?>("ReceivedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("SampleId");
@@ -535,6 +530,10 @@ namespace Repository.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ServiceId");
 
@@ -691,21 +690,13 @@ namespace Repository.Migrations
 
             modelBuilder.Entity("Repository.Entity.Feedback", b =>
                 {
-                    b.HasOne("Repository.Entity.Service", "Service")
+                    b.HasOne("Repository.Entity.Appointment", "Appointment")
                         .WithMany("Feedbacks")
-                        .HasForeignKey("ServiceId")
+                        .HasForeignKey("AppointmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ADN_Group2.BusinessObject.Identity.ApplicationUser", "User")
-                        .WithMany("Feedbacks")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Service");
-
-                    b.Navigation("User");
+                    b.Navigation("Appointment");
                 });
 
             modelBuilder.Entity("Repository.Entity.Kit", b =>
@@ -779,13 +770,13 @@ namespace Repository.Migrations
 
                     b.Navigation("Blogs");
 
-                    b.Navigation("Feedbacks");
-
                     b.Navigation("UserRoles");
                 });
 
             modelBuilder.Entity("Repository.Entity.Appointment", b =>
                 {
+                    b.Navigation("Feedbacks");
+
                     b.Navigation("Kits");
 
                     b.Navigation("Payments");
@@ -801,8 +792,6 @@ namespace Repository.Migrations
             modelBuilder.Entity("Repository.Entity.Service", b =>
                 {
                     b.Navigation("Appointments");
-
-                    b.Navigation("Feedbacks");
                 });
 #pragma warning restore 612, 618
         }

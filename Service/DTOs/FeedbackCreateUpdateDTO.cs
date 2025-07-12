@@ -8,7 +8,7 @@ namespace Service.DTOs
     {
         [Required(ErrorMessage = "UserId is required")]
         public Guid UserId { get; set; }
-        
+
         [Required(ErrorMessage = "Comment is required")]
         [StringLength(500, ErrorMessage = "Comment cannot exceed 500 characters")]
         public string Comment { get; set; }

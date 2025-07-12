@@ -132,7 +132,6 @@ namespace Service
                 KitId = Guid.NewGuid(),
                 AppointmentId = appointmentId,
                 TrackingNumber = trackingNumber,
-                SentDate = DateTime.UtcNow
             };
 
             await _kitRepository.AddAsync(kit);

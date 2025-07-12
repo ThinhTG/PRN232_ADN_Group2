@@ -12,5 +12,12 @@ namespace Repository.Repository
         {
             return await _dbSet.Where(s => ids.Contains(s.SampleId)).ToListAsync();
         }
+        public async Task<IEnumerable<Sample>> GetByAppointmentIdAsync(Guid appointmentId)
+        {
+            return  _context.Samples
+                .Include(x=> x.Kit)
+                .ThenInclude(x=> x.Appointment).
+                Where(s => s.Kit.AppointmentId == appointmentId);
+        }
     }
 } 

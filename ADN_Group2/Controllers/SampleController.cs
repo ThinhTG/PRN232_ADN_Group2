@@ -16,6 +16,14 @@ namespace ADN_Group2.Controllers
 
         [HttpGet]
         public async Task<IEnumerable<SampleReadDTO>> GetAll() => await _service.GetAllAsync();
+        /// <summary>
+        /// Lấy danh sách mẫu theo AppointmentIds
+        /// </summary>
+        /// <param name="appoinmentId"></param>
+        /// <returns></returns>
+        [HttpGet("by-appointment")]
+        public async Task<IEnumerable<SampleReadDTO>> GetByAppointment(Guid appoinmentId) 
+            => await _service.GetSampleByAppointmentIdAsync(appoinmentId);
 
         [HttpGet("{id}")]
         public async Task<ActionResult<SampleReadDTO>> GetById(System.Guid id)
@@ -69,6 +77,17 @@ namespace ADN_Group2.Controllers
         {
             await _service.ReceiveSamplesAsync(dto);
             return Ok("Samples received.");
+        }
+        /// <summary>
+		/// User lấy mẫu ( nhập ApointmentId và danh sách SampleIds lấy mẫu)
+		/// </summary>
+		/// <param name="dto"></param>
+		/// <returns></returns>
+		[HttpPost("onsite-collect")]
+        public async Task<IActionResult> CollectOnsiteSamples([FromBody] SampleCollectDTO dto)
+        {
+            await _service.CollectOnsiteSamplesAsync(dto);
+            return Ok("Samples collected");
         }
     }
 } 

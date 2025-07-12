@@ -2,10 +2,6 @@ using Repository.Entity;
 using Repository.Repository;
 using Service.DTOs;
 using Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Service
 {
@@ -24,7 +20,6 @@ namespace Service
             {
                 KitId = k.KitId,
                 AppointmentId = k.AppointmentId,
-                SentDate = k.SentDate,
                 TrackingNumber = k.TrackingNumber
             });
         }
@@ -37,7 +32,6 @@ namespace Service
             {
                 KitId = k.KitId,
                 AppointmentId = k.AppointmentId,
-                SentDate = k.SentDate,
                 TrackingNumber = k.TrackingNumber
             };
         }
@@ -49,7 +43,6 @@ namespace Service
                 KitId = Guid.NewGuid(),
                 AppointmentId = dto.AppointmentId,
                 TrackingNumber = dto.TrackingNumber,
-                SentDate = DateTime.UtcNow
             };
 
             await _repo.AddAsync(kit);
@@ -59,7 +52,6 @@ namespace Service
             {
                 KitId = kit.KitId,
                 AppointmentId = kit.AppointmentId,
-                SentDate = kit.SentDate,
                 TrackingNumber = kit.TrackingNumber
             };
         }

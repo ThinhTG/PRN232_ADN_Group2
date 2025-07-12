@@ -57,7 +57,6 @@ namespace ADN_Group2.BusinessObject.Identity
         public virtual ICollection<Address> Addresses { get; set; }
         public virtual ICollection<Appointment> Appointments { get; set; }
 		public virtual ICollection<Blog> Blogs { get; set; }    
-		public virtual ICollection<Feedback> Feedbacks { get; set; }    
 
 	}
 }

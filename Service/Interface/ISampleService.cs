@@ -10,6 +10,8 @@ namespace Service.Interface
         Task<SampleReadDTO> UpdateAsync(Guid id,SampleCreateUpdateDTO entity);
         Task<bool> DeleteAsync(object id);
         Task CollectSamplesAsync(SampleCollectDTO dto);
+        Task<IEnumerable<SampleReadDTO>> GetSampleByAppointmentIdAsync(Guid appointmentId);
         Task ReceiveSamplesAsync(SampleReceiveDTO dto);
+        Task CollectOnsiteSamplesAsync(SampleCollectDTO dto);
     }
 } 

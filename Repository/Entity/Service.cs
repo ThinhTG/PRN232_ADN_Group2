@@ -10,7 +10,6 @@ namespace Repository.Entity
         public DateTime CreatedAt { get; set; }
         public string Type { get; set; }
         public string Url { get; set; }
-        public ICollection<Feedback> Feedbacks { get; set; }
         public ICollection<Appointment> Appointments { get; set; }
     }
 } 

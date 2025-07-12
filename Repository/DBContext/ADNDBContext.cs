@@ -130,14 +130,6 @@ namespace Repository.DBContext
 			modelBuilder.Entity<Feedback>(entity =>
 			{
 				entity.HasKey(f => f.FeedbackId);
-				entity.HasOne(f => f.User)
-					  .WithMany(u => u.Feedbacks)
-					  .HasForeignKey(f => f.UserId)
-					  .OnDelete(DeleteBehavior.Cascade);
-				entity.HasOne(f => f.Service)
-					  .WithMany(s => s.Feedbacks)
-					  .HasForeignKey(f => f.ServiceId)
-					  .OnDelete(DeleteBehavior.Cascade);
 				entity.HasOne(f => f.Appointment)
 					  .WithMany(a => a.Feedbacks)
 					  .HasForeignKey(f => f.AppointmentId)
