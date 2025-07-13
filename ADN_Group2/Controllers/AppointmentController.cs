@@ -44,8 +44,15 @@ namespace ADN_Group2.Controllers
         [HttpPost]
         public async Task<ActionResult<AppointmentReadDTO>> Create(AppointmentCreateUpdateDTO dto)
         {
-            var created = await _service.AddAsync(dto);
-            return CreatedAtAction(nameof(GetById), new { id = created.AppointmentId }, created);
+            try
+            {
+                var created = await _service.AddAsync(dto);
+                return CreatedAtAction(nameof(GetById), new { id = created.AppointmentId }, created);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpPut("{id}")]
@@ -64,6 +71,13 @@ namespace ADN_Group2.Controllers
             return NoContent();
         }
 
+
+        /// <summary>
+        /// Lấy tất cả các Appoinment cần lấy mẫu của 1 người dùng
+        /// </summary>
+        /// <param name="userId">Id của User</param>
+        /// <param name="status">nhập số 3 ( Collected) </param>
+        /// <returns></returns>
         [HttpGet("need-collect")]
         public async Task<ActionResult<IEnumerable<AppointmentReadDTO>>> GetNeedCollectByUser(Guid userId, AppointmentStatus? status)
         {
