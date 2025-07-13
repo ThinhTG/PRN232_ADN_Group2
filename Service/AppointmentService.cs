@@ -13,12 +13,14 @@ namespace Service
         private readonly IServiceRepository _serviceRepo;
         private readonly UserRepository _userRepository;
         private readonly AuthService _authService;
-        public AppointmentService(IAppointmentRepository repo, IServiceRepository serviceRepo, UserRepository userRepository, AuthService authService)
+        private readonly IAddressRepository _addressRepository;
+        public AppointmentService(IAppointmentRepository repo, IServiceRepository serviceRepo, UserRepository userRepository, AuthService authService, IAddressRepository addressRepository)
         {
             _repo = repo;
             _serviceRepo = serviceRepo;
             _userRepository = userRepository;
             _authService = authService;
+            _addressRepository = addressRepository;
         }
 
         public async Task<IEnumerable<AppointmentReadDTO>> GetAllAsync(bool? isHomeKit, AppointmentStatus? status)
@@ -56,6 +58,16 @@ namespace Service
 
         public async Task<AppointmentReadDTO> AddAsync(AppointmentCreateUpdateDTO dto)
         {
+            // Nếu là HomeKit, kiểm tra user đã có địa chỉ chưa
+            if (dto.IsHomeKit)
+            {
+                var userId = Guid.Parse(_authService.GetUserId());
+                var addresses = await _addressRepository.GetByUserIdAsync(userId);
+                if (addresses == null || addresses.Count == 0)
+                {
+                    throw new InvalidOperationException("You must add your address before booking a home kit appointment.");
+                }
+            }
 
             var appointment = new Appointment
             {

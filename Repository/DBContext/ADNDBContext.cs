@@ -19,7 +19,7 @@ namespace Repository.DBContext
 		public ADNDbContext(DbContextOptions<ADNDbContext> options)
 			: base(options)
 		{
-			this.Database.Migrate();
+			//this.Database.Migrate();
         }
 		// user
 		public virtual DbSet<ApplicationUser> ApplicationUsers => Set<ApplicationUser>();
