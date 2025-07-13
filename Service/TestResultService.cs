@@ -41,7 +41,6 @@ namespace Service
             await _repo.SaveAsync();
             Appointment appointment = await _appointmentRepo.GetByIdAsync(dto.AppointmentId);
             appointment.Status = AppointmentStatus.Completed.ToString();
-            await _appointmentRepo.AddAsync(appointment);
             await _appointmentRepo.SaveAsync();
             return MapToReadDTO(entity);
         }
