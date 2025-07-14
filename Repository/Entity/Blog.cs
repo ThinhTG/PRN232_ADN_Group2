@@ -9,6 +9,7 @@ namespace Repository.Entity
         public string Title { get; set; }
         public string Content { get; set; }
         public Guid UserId { get; set; }
+        public string? Url { get; set; }
         public DateTime PublishedDate { get; set; }
 
         public ApplicationUser User { get; set; }

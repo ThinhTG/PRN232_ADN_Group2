@@ -2,10 +2,6 @@ using Repository.Entity;
 using Repository.Repository;
 using Service.DTOs;
 using Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Service
 {
@@ -25,6 +21,7 @@ namespace Service
                 BlogId = b.BlogId,
                 Title = b.Title,
                 Content = b.Content,
+                Url = b.Url, // Assuming Url is a property of Blog
                 UserId = b.UserId,
                 PublishedDate = b.PublishedDate
             });
@@ -52,6 +49,7 @@ namespace Service
                 Title = dto.Title,
                 Content = dto.Content,
                 UserId = dto.UserId,
+                Url = dto.Url,
                 PublishedDate = DateTime.UtcNow
             };
 
@@ -62,6 +60,7 @@ namespace Service
             {
                 BlogId = blog.BlogId,
                 Title = blog.Title,
+                Url = blog.Url, // Assuming Url is generated in the Blog entity
                 Content = blog.Content,
                 UserId = blog.UserId,
                 PublishedDate = blog.PublishedDate
@@ -75,6 +74,7 @@ namespace Service
 
             blog.Title = dto.Title;
             blog.Content = dto.Content;
+            blog.Url = dto.Url;
             // UserId maybe shouldn't be updated, but for now we will allow it.
             blog.UserId = dto.UserId;
 

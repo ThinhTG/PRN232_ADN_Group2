@@ -135,6 +135,9 @@ namespace ADN_Group2
 			builder.Services.AddScoped<ITestPersonService, TestPersonService>();
 			builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 			builder.Services.AddScoped<IFeedbackService, FeedbackService>();
+
+            builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
+            builder.Services.AddScoped<IDashboardService, DashboardService>();
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddControllers();
 			builder.Services.AddEndpointsApiExplorer();
