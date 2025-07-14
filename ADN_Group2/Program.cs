@@ -138,6 +138,8 @@ namespace ADN_Group2
 
             builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
             builder.Services.AddScoped<IDashboardService, DashboardService>();
+
+            builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddControllers();
 			builder.Services.AddEndpointsApiExplorer();
