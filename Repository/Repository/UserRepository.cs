@@ -20,7 +20,14 @@ namespace Repository.Repository
         {
             return await _userManager.UpdateAsync(user);
         }
-
+        public async Task<List<ApplicationUser>> GetAllAsync()
+        {
+            return await _userManager.Users
+                .Include(u => u.Addresses)
+                .Include(u => u.UserRoles)
+                    .ThenInclude(ur => ur.Role)
+                .ToListAsync();
+        }
         public async Task<ApplicationUser> FindByEmailAsync(string email)
         {
             return await _userManager.Users.FirstOrDefaultAsync(u => u.Email == email);
