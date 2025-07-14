@@ -10,5 +10,6 @@ namespace Service.Interface
         Task<TestResultReadDTO> AddAsync(TestResultCreateUpdateDTO entity);
         Task<TestResultReadDTO> UpdateAsync(int id,TestResultCreateUpdateDTO entity);
         Task<bool> DeleteAsync(object id);
+        Task<IEnumerable<TestResultReadDTO>> GetByAppointmentIdAsync(Guid appointmentId);
     }
 } 

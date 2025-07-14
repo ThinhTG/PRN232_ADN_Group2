@@ -25,6 +25,13 @@ namespace ADN_Group2.Controllers
             return entity;
         }
 
+        [HttpGet("by-appointment/{appointmentId}")]
+        public async Task<ActionResult<IEnumerable<TestResultReadDTO>>> GetByAppointmentId(Guid appointmentId)
+        {
+            var results = await _service.GetByAppointmentIdAsync(appointmentId);
+            return Ok(results);
+        }
+
         [HttpPost]
         public async Task<ActionResult<TestResultReadDTO>> Create(TestResultCreateUpdateDTO entity)
         {

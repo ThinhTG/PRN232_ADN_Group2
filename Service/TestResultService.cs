@@ -28,6 +28,12 @@ namespace Service
             return result == null ? null : MapToReadDTO(result);
         }
 
+        public async Task<IEnumerable<TestResultReadDTO>> GetByAppointmentIdAsync(Guid appointmentId)
+        {
+            var results = await _repo.GetByAppointmentIdAsync(appointmentId);
+            return results.Select(r => MapToReadDTO(r));
+        }
+
         public async Task<TestResultReadDTO> AddAsync(TestResultCreateUpdateDTO dto)
         {
             var entity = new TestResult
